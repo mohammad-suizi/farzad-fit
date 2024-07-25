@@ -1,0 +1,3 @@
+@function color-transparent($color, $percent) {
+  @return color-mix(in srgb, $color $percent, transparent);
+}

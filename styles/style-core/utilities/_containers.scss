@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// CSSbuild v1.0.0 - Feb 2023 by cssbuild.com
+// License https://cssbuild.com/license
+// Copyright 2023 Heli Technology, Inc.
+// *
+// container classes
+// -----------------------------------------------------------------------------
+@use "../base/variables" as *;
+
+.container {
+  width: clamp(
+    0px,
+    calc(100% - 2 * var(--container-pi, 16px)),
+    var(--container-mw, 1200px)
+  );
+  margin-inline: auto;
+  @each $name, $size in $breakpoints {
+    &.-#{$name} {
+      --container-mw: #{$size};
+    }
+  }
+  &.-fluid {
+    width: 100%;
+  }
+}

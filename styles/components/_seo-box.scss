@@ -1,0 +1,56 @@
+@use "../style-core/core/mixins" as *;
+.seo-box {
+  background-color: var(--t4-surface);
+  position: relative;
+  padding-block: 24px;
+  &__title {
+    padding-inline: 24px;
+  }
+  &__content {
+    overflow: hidden;
+    padding-inline: 24px;
+  }
+  &__readmore {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    .btn {
+      background-color: var(--t4-primary);
+      color: var(--t4-on-primary);
+      width: 40px;
+      aspect-ratio: 1;
+      border-radius: 40px;
+      &::before {
+        @include fa-icon(\f078);
+      }
+    }
+  }
+  &:not(.-open) {
+    .seo-box {
+      &__content {
+      }
+      &__readmore {
+        height: 240px;
+        padding-bottom: 24px;
+        background-image: linear-gradient(
+          180deg,
+          transparent,
+          var(--t4-surface) 90%
+        );
+      }
+    }
+  }
+  &.-open {
+    .seo-box {
+      &__readmore {
+        bottom: -20px;
+        .btn {
+          scale: 1 -1;
+        }
+      }
+    }
+  }
+}

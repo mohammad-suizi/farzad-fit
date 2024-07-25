@@ -1,0 +1,136 @@
+@use "../style-core/core/mixins" as *;
+/*! purgecss start ignore */
+.login-register {
+  text-align: center;
+  .iti {
+    --iti-arrow-padding: 16px;
+    &__tel-input {
+      padding-block: 8px;
+      --iti-input-padding: 16px;
+      width: 100%;
+      border: 1px solid var(--t4-outline-low);
+      border-radius: 4px;
+      outline: none;
+      direction: ltr;
+      &:focus {
+        border-color: var(--t4-primary);
+      }
+      &:not(:focus) {
+        &:hover {
+          border-color: var(--t4-outline-high);
+        }
+      }
+    }
+  }
+  .validation-text {
+    font-size: 14px;
+    display: none;
+    &.-error {
+      display: block;
+      color: var(--t4-error);
+    }
+  }
+  :where(.phone-input, .captcha-input) {
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+      text-align: start;
+    }
+  }
+  .phone-input {
+    // input[type="tel"] {
+    //   width: 100%;
+    // }
+    input {
+      padding-block: 8px;
+      padding-inline: 16px;
+      text-align: center;
+      width: 100%;
+      border: 1px solid var(--t4-outline-low);
+      border-radius: 4px;
+      outline: none;
+      direction: ltr;
+      letter-spacing: 4px;
+      &:focus {
+        border-color: var(--t4-primary);
+      }
+      &:not(:focus) {
+        &:hover {
+          border-color: var(--t4-outline-high);
+        }
+      }
+    }
+  }
+  .captcha-input {
+    .input-wrapper {
+      position: relative;
+    }
+    input {
+      padding-block: 8px;
+      padding-left: 120px;
+      padding-right: 16px;
+      width: 100%;
+      border: 1px solid var(--t4-outline-low);
+      border-radius: 4px;
+      outline: none;
+      direction: ltr;
+      letter-spacing: 4px;
+      &:focus {
+        border-color: var(--t4-primary);
+      }
+      &:not(:focus) {
+        &:hover {
+          border-color: var(--t4-outline-high);
+        }
+      }
+    }
+    img {
+      position: absolute;
+      left: 1px;
+      inset-block: 1px;
+      height: 40px;
+      border-radius: 4px 0px 0px 4px;
+    }
+  }
+  .otp-input {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    &__item {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--t4-outline-low);
+      border-radius: 4px;
+      outline: none;
+      direction: ltr;
+      text-align: center;
+      line-height: 16px;
+      font-size: 16px;
+      vertical-align: middle;
+      padding: 0;
+      &:focus {
+        border-color: var(--t4-primary);
+      }
+      &:not(:focus) {
+        &:hover {
+          border-color: var(--t4-outline-high);
+        }
+      }
+    }
+  }
+  .change-phone {
+    background-color: transparent;
+  }
+  .resend-code {
+    &__countdown {
+      font-feature-settings: "ss03";
+    }
+    &__btn {
+      background-color: transparent;
+    }
+  }
+}
+/*! purgecss end ignore */

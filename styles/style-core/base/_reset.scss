@@ -1,0 +1,54 @@
+/*! purgecss start ignore */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+* {
+  vertical-align: middle;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: none;
+  margin: 0;
+  padding: 0;
+}
+:where(*, *:before, *:after) {
+  box-sizing: border-box;
+}
+:where(ol, ul) {
+  list-style: none;
+}
+:where(input, textarea, select) {
+  font-family: inherit;
+  font-variation-settings: inherit;
+  font-size: 1rem;
+  &::placeholder {
+    color: inherit;
+    opacity: 0.375;
+  }
+}
+:where(button) {
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  font-variation-settings: inherit;
+  padding: 0;
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+  &:disabled {
+    cursor: pointer;
+  }
+}
+:where(a[class]) {
+  text-decoration: none;
+  color: inherit;
+}
+:where(img) {
+  max-width: 100%;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 1rem;
+  vertical-align: middle;
+}
+/*! purgecss end ignore */

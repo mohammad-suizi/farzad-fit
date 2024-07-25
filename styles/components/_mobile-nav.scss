@@ -1,0 +1,110 @@
+@use "../style-core/core/mixins" as *;
+body {
+  &.-open-mobile-nav {
+    overflow: hidden;
+  }
+}
+.t4-mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 19;
+  visibility: hidden;
+  &:not(.-open) {
+    transition: visibility 0s 0.2s;
+  }
+  &.-open {
+    visibility: visible;
+    .t4-mobile-nav {
+      &__overlay {
+        opacity: 1;
+      }
+      &__content {
+        translate: 0;
+      }
+    }
+  }
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(#000, 0.4);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  &__content {
+    position: absolute;
+    inset: 0;
+    padding-top: var(--stiky-height);
+    background-color: var(--body-bg);
+    translate: 100% 0;
+    transition: translate 0.2s;
+    @include min(sm) {
+      max-width: 320px;
+    }
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    &__main {
+      flex-grow: 1;
+      padding: 16px;
+      overflow-y: auto;
+    }
+  }
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-2);
+    a {
+      @include fvs(500);
+    }
+    li {
+      > a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 0.875rem;
+        display: inline-flex;
+        width: 100%;
+        align-items: center;
+        padding: var(--spacing-2) var(--spacing-4);
+      }
+      &.-has-child {
+        display: grid;
+        grid-template-rows: max-content 0fr;
+        transition: grid-template-rows 0.1s;
+        > a {
+          &::after {
+            content: "";
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M18 9s-4.419 6-6 6s-6-6-6-6' color='%23000'/%3E%3C/svg%3E");
+            background-color: currentColor;
+            mask-image: var(--svg);
+            mask-repeat: no-repeat;
+            mask-size: 100% 100%;
+            transition: scale 0.2s;
+            margin-inline-start: auto;
+          }
+        }
+        > ul {
+          overflow: hidden;
+          margin-inline: var(--spacing-4);
+          transition: padding-block 0.1s;
+          border-radius: 0.5rem;
+          background-color: var(--t4-surface);
+        }
+        &.-open {
+          grid-template-rows: max-content 1fr;
+          padding-bottom: var(--spacing-4);
+          > ul {
+            padding-block: var(--spacing-2);
+          }
+        }
+      }
+    }
+    > li {
+      border-radius: var(--radius-2);
+      background-color: var(--t4-surface-low);
+    }
+  }
+}

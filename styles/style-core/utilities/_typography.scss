@@ -1,0 +1,12 @@
+@use "../base/variables" as *;
+@use "../core/mixins" as *;
+
+@each $text-type, $typo-map in $typography {
+  .-fs-#{$text-type} {
+    @each $size, $size-map in $typo-map {
+      &-#{$size} {
+        @include fs($text-type, $size);
+      }
+    }
+  }
+}

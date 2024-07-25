@@ -1,0 +1,20 @@
+@use "../base/variables" as *;
+@use "../core/mixins" as *;
+
+@each $name, $size in $breakpoints {
+  $inifix: if($name == "xxs", "-", "#{$name}-");
+  @include min($name) {
+    @each $num, $size in $radius {
+      .#{$inifix}r {
+        &-#{$num} {
+          border-radius: #{$size};
+        }
+      }
+    }
+  }
+}
+:root {
+  @each $name, $var in $radius {
+    --radius-#{$name}: #{$var};
+  }
+}

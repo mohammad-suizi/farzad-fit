@@ -1,0 +1,85 @@
+@forward "css-varibales";
+@forward "fonts";
+@forward "variables";
+
+@use "../style-core/core/mixins" as *;
+html {
+  scroll-behavior: smooth;
+}
+a:not([class]) {
+  color: inherit;
+  text-underline-offset: 0.5em;
+  text-decoration-thickness: 1.5px;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--t4-outline-low);
+  opacity: 0.4;
+  margin-block: 1rem;
+}
+.site-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background-color: var(--body-bg);
+  color: var(--body-color);
+  .site-main {
+    flex-grow: 1;
+    flex-basis: 200px;
+  }
+}
+
+.breadcrumb {
+  &__wrapper {
+    background-color: var(--t4-surface);
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  ol {
+    overflow-x: auto;
+    display: flex;
+    @include hide-scrollbars;
+  }
+  li {
+    display: inline;
+    flex-shrink: 0;
+    &:not(:last-of-type) {
+      &::after {
+        content: "/";
+        opacity: 0.5;
+        margin-inline-start: 8px;
+        font-size: 12px;
+      }
+    }
+    &:not(:first-of-type) {
+      margin-inline-start: 8px;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.t4-mobile-nav {
+  &__content {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      inset-inline: 0;
+      background-image: url(/assets/img/mobille-nav-bg.webp);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      height: 406px;
+      opacity: 0.2;
+    }
+  }
+}

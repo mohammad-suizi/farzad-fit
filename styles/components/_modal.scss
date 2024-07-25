@@ -1,0 +1,215 @@
+@use "../style-core/core/mixins" as *;
+
+.t4-modal {
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 29;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include dark-mode {
+      background-color: rgba(#fff, 0.1);
+    }
+  }
+  &__content {
+    background-color: var(--t4-surface-low);
+    display: flex;
+    flex-direction: column;
+    width: clamp(0px, calc(100% - 32px), 480px);
+    max-height: calc(100dvh - 32px);
+    border-radius: 8px;
+    &.-loading {
+      .t4-modal {
+        &__main {
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            inset: 8px;
+            backdrop-filter: blur(1.5px);
+            z-index: 8;
+          }
+          &::after {
+            content: "";
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='mingcuteLoadingFill0' x1='50%25' x2='50%25' y1='5.271%25' y2='91.793%25'%3E%3Cstop offset='0%25' stop-color='%23000'/%3E%3Cstop offset='100%25' stop-color='%23000' stop-opacity='0.55'/%3E%3C/linearGradient%3E%3ClinearGradient id='mingcuteLoadingFill1' x1='50%25' x2='50%25' y1='15.24%25' y2='87.15%25'%3E%3Cstop offset='0%25' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='100%25' stop-color='%23000' stop-opacity='0.55'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='none'%3E%3Cpath d='M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z'/%3E%3Cpath fill='url(%23mingcuteLoadingFill0)' d='M8.749.021a1.5 1.5 0 0 1 .497 2.958A7.5 7.5 0 0 0 3 10.375a7.5 7.5 0 0 0 7.5 7.5v3c-5.799 0-10.5-4.7-10.5-10.5C0 5.23 3.726.865 8.749.021' transform='translate(1.5 1.625)'/%3E%3Cpath fill='url(%23mingcuteLoadingFill1)' d='M15.392 2.673a1.5 1.5 0 0 1 2.119-.115A10.48 10.48 0 0 1 21 10.375c0 5.8-4.701 10.5-10.5 10.5v-3a7.5 7.5 0 0 0 5.007-13.084a1.5 1.5 0 0 1-.115-2.118' transform='translate(1.5 1.625)'/%3E%3C/g%3E%3C/svg%3E");
+            background-color: currentColor;
+            mask-image: var(--svg);
+            mask-repeat: no-repeat;
+            mask-size: 100% 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            font-size: 20px;
+            animation: spinner 1s linear infinite;
+            will-change: rotate;
+            z-index: 9;
+          }
+        }
+      }
+    }
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 24px;
+    padding: 16px;
+    border-bottom: 1px dashed var(--t4-outline-low);
+  }
+  &__main {
+    padding: 16px;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  &__footer {
+    border-top: 1px dashed var(--t4-outline-low);
+    padding: 16px;
+  }
+  .modal {
+    &__title {
+      font-size: 1.25em;
+    }
+    &__close {
+      background-color: transparent;
+      color: var(--t4-on-surface-low);
+      height: fit-content;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-width='2'%3E%3Cpath d='M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z'/%3E%3Cpath stroke-linecap='round' d='m14.5 9.5l-5 5m0-5l5 5'/%3E%3C/g%3E%3C/svg%3E");
+      background-color: currentColor;
+      mask-image: var(--svg);
+      mask-repeat: no-repeat;
+      mask-size: 100% 100%;
+      &:hover {
+      }
+    }
+  }
+  &.-slide {
+    display: none;
+    &.-open {
+      display: block;
+    }
+    .t4-modal {
+      &__overlay {
+        will-change: opacity;
+      }
+      &__content {
+        will-change: translate;
+      }
+    }
+    &[aria-hidden="false"] {
+      .t4-modal {
+        &__overlay {
+          animation: t4-modal__fadeIn 0.2s;
+        }
+        &__content {
+          animation: t4-modal__slideIn 0.2s;
+        }
+      }
+    }
+    &[aria-hidden="true"] {
+      .t4-modal {
+        &__overlay {
+          animation: t4-modal__fadeOut 0.2s;
+        }
+        &__content {
+          animation: t4-modal__slideOut 0.2;
+        }
+      }
+    }
+  }
+  &#login-register__modal {
+    &.-slide {
+      @include max(sm) {
+        &[aria-hidden="false"] {
+          .t4-modal {
+            &__content {
+              animation: t4-modal__slideInBS 0.2s;
+            }
+          }
+        }
+        &[aria-hidden="true"] {
+          .t4-modal {
+            &__content {
+              animation: t4-modal__slideOutBS 0.2s;
+            }
+          }
+        }
+      }
+    }
+    .t4-modal {
+      &__overlay {
+        @include max(sm) {
+          align-items: flex-end;
+        }
+      }
+      &__content {
+        @include max(sm) {
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+  }
+}
+@keyframes t4-modal__fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes t4-modal__fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes t4-modal__slideIn {
+  0% {
+    translate: 0 15%;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes t4-modal__slideOut {
+  0% {
+    translate: 0 0;
+  }
+  100% {
+    translate: 0 -10%;
+  }
+}
+
+@keyframes t4-modal__slideInBS {
+  0% {
+    translate: 0 100%;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes t4-modal__slideOutBS {
+  0% {
+    translate: 0 0;
+  }
+  100% {
+    translate: 0 100%;
+  }
+}

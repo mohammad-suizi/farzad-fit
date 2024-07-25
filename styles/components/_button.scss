@@ -1,0 +1,87 @@
+@use "../style-core/core/mixins" as *;
+.t4-btn {
+  display: inline-flex;
+  column-gap: 8px;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: var(--radius-2);
+  padding: 11px 17px;
+  height: 40px;
+  i {
+    font-size: 18px;
+  }
+  &.-wide {
+    width: 100%;
+  }
+  &.-filled {
+    &.-primary {
+      background-color: var(--t4-primary);
+      color: var(--t4-on-primary);
+    }
+    &.-accent {
+      background-color: var(--t4-accent);
+      color: var(--t4-on-accent);
+    }
+    &:not(:disabled) {
+      &:hover {
+        @include hover {
+          background-color: var(--t4-accent);
+          color: var(--t4-on-accent);
+        }
+      }
+      &:active {
+      }
+      &:focus {
+      }
+    }
+    &:disabled {
+    }
+  }
+  &.-outlined {
+    border: 2px solid var(--t4-primary);
+    color: var(--t4-primary);
+    &:not(:disabled) {
+      @include hover {
+        &:hover {
+          background-color: var(--t4-primary);
+          color: var(--t4-on-primary);
+        }
+      }
+      &:active {
+        background-color: var(--t4-accent);
+        color: var(--t4-on-accent);
+      }
+      &:focus {
+      }
+    }
+    &:disabled {
+    }
+  }
+  &.-loading {
+    position: relative;
+    > * {
+      visibility: hidden;
+    }
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      font-size: 20px;
+      animation: spinner 1s linear infinite;
+      will-change: rotate;
+    }
+  }
+  &.-icon-only {
+    aspect-ratio: 1;
+    max-height: 40px;
+    max-width: 40px;
+    padding: 0;
+    .text {
+      display: none;
+    }
+  }
+}

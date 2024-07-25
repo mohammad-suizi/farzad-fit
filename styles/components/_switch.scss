@@ -1,0 +1,33 @@
+@use "../style-core/core/mixins" as *;
+
+.t4-switch {
+  width: 2rem;
+  height: 1rem;
+  background-color: #eee;
+  border-radius: 1.25rem;
+  border: 1px solid #aaa;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  transition-property: background-color;
+  &::before {
+    content: "";
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    inset-inline-start: calc(0.125rem - 1px);
+    transition-duration: 0.2s;
+    transition-property: inset-inline-start;
+  }
+  &.-active {
+    background-color: green;
+    &::before {
+      inset-inline-start: calc(100% - 0.875rem + 1px);
+    }
+  }
+}

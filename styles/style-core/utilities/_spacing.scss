@@ -1,0 +1,144 @@
+@use "../base/variables" as *;
+@use "../core/mixins" as *;
+
+@each $name, $size in $breakpoints {
+  $inifix: if($name == "xxs", "", "#{$name}-");
+  @include min($name) {
+    @each $num, $size in $spacing {
+      .#{$inifix}m {
+        &x-#{$num} {
+          margin-inline: #{$size};
+        }
+
+        &s-#{$num} {
+          margin-inline-start: #{$size};
+        }
+
+        &e-#{$num} {
+          margin-inline-end: #{$size};
+        }
+
+        &t-#{$num} {
+          margin-top: #{$size};
+        }
+
+        &r-#{$num} {
+          margin-right: #{$size};
+        }
+
+        &b-#{$num} {
+          margin-bottom: #{$size};
+        }
+
+        &l-#{$num} {
+          margin-left: #{$size};
+        }
+
+        &y-#{$num} {
+          margin-block: #{$size};
+        }
+
+        &-#{$num} {
+          margin: #{$size};
+        }
+      }
+
+      .-#{$inifix}m {
+        &x-#{$num} {
+          margin-inline: -#{$size};
+        }
+
+        &s-#{$num} {
+          margin-inline-start: -#{$size};
+        }
+
+        &e-#{$num} {
+          margin-inline-end: -#{$size};
+        }
+
+        &t-#{$num} {
+          margin-top: -#{$size};
+        }
+
+        &r-#{$num} {
+          margin-right: -#{$size};
+        }
+
+        &b-#{$num} {
+          margin-bottom: -#{$size};
+        }
+
+        &l-#{$num} {
+          margin-left: -#{$size};
+        }
+
+        &y-#{$num} {
+          margin-block: -#{$size};
+        }
+
+        &-#{$num} {
+          margin: -#{$size};
+        }
+      }
+
+      .#{$inifix}p {
+        &x {
+          &-#{$num} {
+            padding-inline: #{$size};
+          }
+        }
+
+        &s {
+          &-#{$num} {
+            padding-inline-start: #{$size};
+          }
+        }
+
+        &e {
+          &-#{$num} {
+            padding-inline-end: #{$size};
+          }
+        }
+
+        &t {
+          &-#{$num} {
+            padding-top: #{$size};
+          }
+        }
+
+        &r {
+          &-#{$num} {
+            padding-right: #{$size};
+          }
+        }
+
+        &b {
+          &-#{$num} {
+            padding-bottom: #{$size};
+          }
+        }
+
+        &l {
+          &-#{$num} {
+            padding-left: #{$size};
+          }
+        }
+
+        &y {
+          &-#{$num} {
+            padding-block: #{$size};
+          }
+        }
+
+        &-#{$num} {
+          padding: #{$size};
+        }
+      }
+    }
+  }
+}
+:root {
+  @each $name, $var in $spacing {
+    --spacing-#{$name}: #{$var};
+  }
+}

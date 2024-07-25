@@ -1,0 +1,125 @@
+@use "../style-core/core/mixins" as *;
+@use "../style-core/core/functions" as *;
+.site-footer {
+  &__bottom {
+    .copyright {
+      text-align: center;
+      padding-block: var(--spacing-4);
+    }
+  }
+  &__main {
+    background-color: var(--t4-surface-inverse);
+    color: var(--t4-on-surface-inverse);
+    border-radius: var(--radius-5);
+    padding: var(--spacing-8) var(--spacing-8);
+    display: flex;
+    gap: var(--spacing-8) var(--spacing-16);
+    flex-wrap: wrap;
+    .footer {
+      &__top {
+        flex: 1 0 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      &__right {
+        flex: 0 1 100%;
+        @include min(lg) {
+          flex-basis: 480px;
+        }
+      }
+      &__center {
+      }
+    }
+  }
+  .logo {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    line-height: 1.5;
+    column-gap: 0.75rem;
+    span {
+      @include fvs(900, 2);
+      font-size: 1.125rem;
+    }
+    p {
+      font-size: 0.75rem;
+    }
+  }
+  .footer-menu {
+    font-size: 0.875rem;
+    line-height: 1.75rem;
+    list-style: circle;
+    padding-inline-start: 1rem;
+    li {
+      width: fit-content;
+      &:hover {
+        list-style: disc;
+        color: var(--t4-accent);
+      }
+    }
+
+    // a {
+    //   &:hover {
+    //     color: var(--t4-accent);
+    //   }
+    // }
+  }
+  .contact-us {
+    font-size: 0.875rem;
+    line-height: 1.75rem;
+    li {
+      width: fit-content;
+      &:hover {
+        color: var(--t4-accent);
+      }
+    }
+  }
+}
+
+.t4-mobile-menu {
+  position: sticky;
+  bottom: 16px;
+  margin-top: 1rem;
+  z-index: 11;
+  transition: translate 0.2s;
+  @include min(lg) {
+    display: none;
+  }
+  .-scroll-down & {
+    translate: 0 calc(100% + 1rem);
+  }
+  .navbar {
+    color: var(--t4-on-surface-inverse);
+    backdrop-filter: blur(2px);
+    box-shadow: var(--t4-box-shadow-1);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--t4-surface-inverse);
+    @supports (background-color: color-mix(in srgb, red 50%, blue 50%)) {
+      background-color: color-transparent(var(--t4-surface-inverse), 90%);
+    }
+    @include min(sm) {
+      column-gap: 1.5rem;
+      width: fit-content;
+    }
+    &__item {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      row-gap: 4px;
+      align-items: center;
+      text-align: center;
+      svg {
+        font-size: 1.5rem;
+      }
+      .text {
+        font-size: 0.625rem;
+        @include min(sm) {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,188 @@
+@use "../core/mixins" as *;
+@use "../base/variables" as *;
+@use "sass:math";
+
+@each $name, $size in $breakpoints {
+  $inifix: if($name == "xxs", "-", "#{$name}-");
+  @include min($name) {
+    @for $num from 1 through 12 {
+      .#{$inifix}cols-#{$num} {
+        @if $num ==1 {
+          grid-template-columns: 100%;
+        } @else {
+          grid-template-columns: repeat($num, 1fr);
+        }
+      }
+      .#{$inifix}col-#{$num} {
+        grid-column: auto / span $num;
+      }
+      .#{$inifix}col-start-#{$num} {
+        grid-column-start: $num;
+      }
+      .#{$inifix}order-#{$num} {
+        order: #{$num};
+      }
+    }
+    .#{$inifix}g {
+      @each $space, $value in $spacing {
+        &x {
+          &-#{$space} {
+            column-gap: $value;
+          }
+        }
+        &y {
+          &-#{$space} {
+            row-gap: $value;
+          }
+        }
+        &-#{$space} {
+          gap: $value;
+        }
+      }
+    }
+    .#{$inifix}a {
+      &i {
+        &-start {
+          align-items: start;
+        }
+        &-stretch {
+          align-items: stretch;
+        }
+        &-center {
+          align-items: center;
+        }
+        &-end {
+          align-items: end;
+        }
+      }
+      &c {
+        &-start {
+          align-content: start;
+        }
+        &-center {
+          align-content: center;
+        }
+        &-end {
+          align-content: center;
+        }
+        &-between {
+          align-content: space-between;
+        }
+        &-evenly {
+          align-content: space-evenly;
+        }
+        &-around {
+          align-content: space-around;
+        }
+      }
+      & {
+        &-start {
+          align-self: start;
+        }
+        &-stretch {
+          align-self: stretch;
+        }
+        &-center {
+          align-self: center;
+        }
+        &-end {
+          align-self: end;
+        }
+      }
+    }
+    .#{$inifix}j {
+      &c {
+        &-start {
+          justify-content: start;
+        }
+        &-stretch {
+          justify-content: stretch;
+        }
+        &-center {
+          justify-content: center;
+        }
+        &-end {
+          justify-content: end;
+        }
+        &-right {
+          justify-content: right;
+        }
+        &-left {
+          justify-content: left;
+        }
+        &-between {
+          justify-content: space-between;
+        }
+        &-evenly {
+          justify-content: space-evenly;
+        }
+        &-around {
+          justify-content: space-around;
+        }
+      }
+      &i {
+        &-stretch {
+          justify-items: stretch;
+        }
+        &-start {
+          justify-items: start;
+        }
+        &-center {
+          justify-items: center;
+        }
+        &-end {
+          justify-items: end;
+        }
+        &-right {
+          justify-items: right;
+        }
+        &-left {
+          justify-items: left;
+        }
+      }
+      & {
+        &-start {
+          justify-self: start;
+        }
+        &-center {
+          justify-self: center;
+        }
+        &-end {
+          justify-self: end;
+        }
+        &-left {
+          justify-self: left;
+        }
+        &-right {
+          justify-self: right;
+        }
+      }
+    }
+    .#{$inifix}column {
+      flex-direction: column;
+      &-reverse {
+        flex-direction: column-reverse;
+      }
+    }
+    .#{$inifix}row {
+      flex-direction: row;
+      &-reverse {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .#{$inifix}order-first {
+      order: -999;
+    }
+
+    .#{$inifix}order-last {
+      order: 999;
+    }
+  }
+}
+.-wrap {
+  flex-wrap: wrap;
+}
+.-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}

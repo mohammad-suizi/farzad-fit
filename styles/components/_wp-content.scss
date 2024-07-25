@@ -1,0 +1,80 @@
+@use "../style-core/core/mixins" as *;
+/*! purgecss start ignore */
+:where(.wp-content) {
+  font-size: 0.875em;
+  :where(h1, h2, h3, h4, h5, h6) {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  :not(h1, h2, h3, h4, h5, h6) {
+    line-height: 2;
+    a {
+      &:hover {
+        color: var(--t4-accent);
+        border-radius: 0.25em;
+      }
+    }
+  }
+  > :first-child {
+    margin-top: 0;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+  * {
+    margin: revert;
+    padding: revert;
+  }
+  :where(ul, ol) {
+    list-style: revert;
+  }
+  img {
+    display: block;
+    margin-inline: auto;
+    border-radius: 16px;
+    width: 100%;
+  }
+  figure {
+    margin-inline: 0;
+    &.size-full {
+      width: 100%;
+    }
+  }
+  figcaption {
+    text-align: center;
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: 0.5rem;
+  }
+  .wp-block-table {
+    @include max(lg) {
+      margin-inline: -16px;
+      padding-inline: 16px;
+      overflow-x: auto;
+      @include hide-scrollbars;
+    }
+    table {
+      width: 100%;
+      border: 1px solid var(--t4-outline-low);
+      border-collapse: collapse;
+      font-size: 0.75rem;
+      :is(th, td) {
+        border: 1px solid var(--t4-outline-low);
+        padding: 0.5rem 1rem;
+        vertical-align: middle;
+        text-align: center;
+      }
+      tr {
+        &:nth-of-type(even) {
+          background-color: var(--t4-surface);
+        }
+        &:hover {
+          background-color: var(--t4-surface-high);
+        }
+      }
+    }
+  }
+}
+/*! purgecss end ignore */

@@ -1,0 +1,103 @@
+@use "../core/mixins" as *;
+.-align {
+  &-start {
+    text-align: start;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-end {
+    text-align: end;
+  }
+  &-left {
+    text-align: left;
+  }
+  &-right {
+    text-align: right;
+  }
+}
+.-dir {
+  &-ltr {
+    direction: ltr;
+  }
+  &-rtl {
+    direction: rtl;
+  }
+  &-auto {
+    direction: auto;
+  }
+}
+
+.-ws {
+  &-normal {
+    white-space: normal;
+  }
+
+  &-nowrap {
+    white-space: nowrap;
+  }
+}
+.-uppercase {
+  text-transform: uppercase;
+}
+.-capitalize {
+  text-transform: capitalize;
+}
+.-fw {
+  &-100 {
+    @include fvs(100);
+  }
+  &-200 {
+    @include fvs(200);
+  }
+  &-300 {
+    @include fvs(300);
+  }
+  &-400 {
+    @include fvs(400);
+  }
+  &-500 {
+    @include fvs(500);
+  }
+  &-600 {
+    @include fvs(600);
+  }
+  &-700 {
+    @include fvs(700);
+  }
+  &-800 {
+    @include fvs(800);
+  }
+  &-900 {
+    @include fvs(900);
+  }
+}
+
+.-vi {
+  &-baseline {
+    vertical-align: baseline;
+  }
+  &-bottom {
+    vertical-align: bottom;
+  }
+  &-middle {
+    vertical-align: middle;
+  }
+  &-sub {
+    vertical-align: sub;
+  }
+  &-super {
+    vertical-align: super;
+  }
+  &-text-bottom {
+    vertical-align: text-bottom;
+  }
+  &-text-top {
+    vertical-align: text-top;
+  }
+  &-top {
+    vertical-align: top;
+  }
+}

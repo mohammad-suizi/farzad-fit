@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// CSSbuild v1.0.0 - Feb 2023 by cssbuild.com
+// License https://cssbuild.com/license
+// Copyright 2023 Heli Technology, Inc.
+// *
+// display classes
+// -----------------------------------------------------------------------------
+@use "../base/variables" as *;
+@use "../core/mixins" as *;
+
+@each $name, $size in $breakpoints {
+  $inifix: if($name == "xxs", "-", "#{$name}-");
+  @include min($name) {
+    .#{$inifix}-none {
+      display: none;
+    }
+    .#{$inifix}-block {
+      display: block;
+    }
+    .#{$inifix}-iblock {
+      display: inline-block;
+    }
+    .#{$inifix}-grid {
+      display: grid;
+    }
+    .#{$inifix}-igrid {
+      display: inline-grid;
+    }
+    .#{$inifix}-flex {
+      display: flex;
+    }
+    .#{$inifix}-iflex {
+      display: inline-flex;
+    }
+  }
+}
