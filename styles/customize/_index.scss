@@ -27,6 +27,9 @@ hr {
     flex-grow: 1;
     flex-basis: 200px;
   }
+  .site-footer {
+    margin-top: var(--spacing-12);
+  }
 }
 
 .breadcrumb {
@@ -81,5 +84,53 @@ hr {
       height: 406px;
       opacity: 0.2;
     }
+  }
+}
+.site-body {
+  .splide {
+    &__pagination {
+      position: static;
+      margin-top: var(--spacing-4);
+      &__page {
+        background-color: var(--t4-surface);
+        opacity: 1;
+        &:focus-visible {
+          outline: none;
+        }
+        &.is-active {
+          background-color: var(--t4-primary);
+        }
+      }
+    }
+    &__arrow {
+      background-color: var(--t4-primary);
+      color: var(--t4-on-primary);
+      transition: translate 0.1s, opacity 0.1s;
+      &--prev {
+        &:disabled {
+          translate: calc(100% + 1em) 0;
+        }
+      }
+      &--next {
+        &:disabled {
+          translate: calc(-100% - 1em) 0;
+        }
+      }
+    }
+  }
+}
+
+.ff-helper {
+  display: inline-block;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -0.5rem -1rem;
+    background-color: var(--t4-accent);
+    color: var(--t4-on-accent);
+    transform: skewX(-15deg);
+    border-radius: var(--radius-2);
+    z-index: -1;
   }
 }

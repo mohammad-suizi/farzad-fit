@@ -1,0 +1,134 @@
+@use "../style-core/core/mixins" as *;
+
+.card-product {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-4);
+  background-color: var(--t4-surface-low);
+  border-radius: var(--radius-4);
+  padding: var(--spacing-4);
+  &__img-box {
+    .img-link {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      position: relative;
+      display: block;
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: var(--radius-2);
+        background-color: var(--t4-accent);
+        z-index: 1;
+        transition: rotate 0.2s;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius-2);
+      position: relative;
+      z-index: 2;
+      transition: box-shadow 0.2s;
+    }
+  }
+  &__cnt-box {
+    position: relative;
+    .bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-top: 1rem;
+    }
+  }
+  .title {
+    @include fs(p, 5);
+    a {
+      transition: color 0.2s;
+      @include line-clamb(2);
+      &:hover {
+        color: var(--t4-accent);
+      }
+    }
+  }
+  .price {
+    position: relative;
+    line-height: 1;
+    margin-top: calc(0.75em + 0.25rem);
+    &__unit {
+      font-size: 0.75em;
+    }
+    &__amount {
+      @include fvs(500);
+    }
+    ins {
+      text-decoration: none;
+    }
+    del {
+      opacity: 0.5;
+      position: absolute;
+      inset-inline: 0;
+      font-size: 0.75em;
+      bottom: calc(100% + 0.25rem);
+    }
+  }
+  .discount-badge {
+    background-color: var(--t4-accent);
+    color: var(--t4-on-accent);
+    font-size: 0.625rem;
+    @include fvs(500);
+    line-height: 1.25rem;
+    padding-inline: 0.625rem;
+    border-radius: var(--radius-1);
+  }
+  .action-btn {
+    background-color: var(--t4-primary);
+    color: var(--t4-on-primary);
+    width: 100%;
+    font-size: 0.75rem;
+    @include fvs(500);
+    line-height: 2rem;
+    padding-inline: 0.875rem;
+    border-radius: var(--radius-1);
+    margin-top: var(--spacing-4);
+    transition: background-color 0.2s, color 0.2s, opacity 0.2s,
+      visibility 0s 0.2s;
+    &:hover {
+      background-color: var(--t4-accent);
+      color: var(--t4-on-accent);
+    }
+    @include hover {
+      position: absolute;
+      bottom: 0;
+      visibility: hidden;
+      opacity: 0;
+      transition: background-color 0.2s, color 0.2s, opacity 0.2s,
+        visibility 0.2s 0s;
+    }
+  }
+  .excerpt {
+    @include fs(p, 6);
+    @include line-clamb(3);
+  }
+  &:hover {
+    .card-product {
+      &__img-box {
+        .img-link {
+          img {
+            box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+          }
+          &::before {
+            rotate: 3deg;
+          }
+        }
+      }
+    }
+    .action-btn {
+      @include hover {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -18,8 +18,18 @@ if (isProduction) {
       },
     }),
     purgecss({
-      content: ["./index.html"],
-      css: ["./styles/general.scss", "./styles/index.scss"],
+      content: [
+        "./index.html",
+        "./blog-archive.html",
+        "./product-archive.html",
+        "./page.html",
+      ],
+      css: [
+        "./styles/general.scss",
+        "./styles/pages/index.scss",
+        "./styles/pages/blog-archive.scss",
+        "./styles/pages/page.scss",
+      ],
       defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
     })
   );
@@ -27,9 +37,6 @@ if (isProduction) {
 
 export default defineConfig({
   css: {
-    preprocessorOptions: {
-      scss: {},
-    },
     postcss: {
       plugins: postcssPlugins,
     },
@@ -38,16 +45,16 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, "./index.html"),
+        "blog-archive": resolve(__dirname, "./blog-archive.html"),
+        "product-archive": resolve(__dirname, "./product-archive.html"),
+        page: resolve(__dirname, "./page.html"),
       },
       output: {
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name.endsWith(".css")) {
+        assetFileNames: ({ name }) => {
+          if (/\.css$/.test(name ?? "")) {
             return "assets/css/[name][extname]";
           }
-          if (assetInfo.name.endsWith(".js")) {
-            return "assets/js/[name][extname]";
-          }
-          // return "assets/js/[name][extname]";
+          return "assets/[name][extname]";
         },
       },
     },
