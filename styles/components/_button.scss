@@ -1,19 +1,17 @@
 @use "../style-core/core/mixins" as *;
 .t4-btn {
   display: inline-flex;
-  column-gap: 8px;
+  column-gap: var(--spacing-2);
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  font-size: 14px;
-  line-height: 18px;
   border-radius: var(--radius-2);
-  padding: 11px 17px;
-  height: 40px;
+  padding: var(--spacing-3) var(--spacing-6);
   white-space: nowrap;
-  i {
-    font-size: 18px;
-  }
+  transition-duration: 0.2s;
+  transition-property: background-color, color;
+  font-size: 1rem;
+  @include fvs(600);
   &.-wide {
     width: 100%;
   }
@@ -29,7 +27,7 @@
     &:not(:disabled) {
       &:hover {
         @include hover {
-          background-color: var(--t4-accent);
+          background-color: var(--t4-accent-high);
           color: var(--t4-on-accent);
         }
       }
@@ -78,11 +76,13 @@
   }
   &.-icon-only {
     aspect-ratio: 1;
-    max-height: 40px;
-    max-width: 40px;
+    min-height: 48px;
     padding: 0;
     .text {
       display: none;
     }
+  }
+  &.-rounded {
+    border-radius: var(--radius-full);
   }
 }

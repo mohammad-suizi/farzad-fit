@@ -1,6 +1,8 @@
 @use "../style-core/core/mixins" as *;
 @use "../style-core/core/functions" as *;
 .site-footer {
+  position: relative;
+  z-index: 1;
   &__bottom {
     .copyright {
       text-align: center;
