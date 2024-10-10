@@ -6,10 +6,9 @@
 html {
   scroll-behavior: smooth;
 }
-a:not([class]) {
+a {
   color: inherit;
-  text-underline-offset: 0.5em;
-  text-decoration-thickness: 1.5px;
+  text-decoration: none;
 }
 hr {
   border: none;
@@ -32,44 +31,6 @@ hr {
   }
 }
 
-.breadcrumb {
-  &__wrapper {
-    background-color: var(--t4-surface);
-    min-height: 52px;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-  }
-  ol {
-    overflow-x: auto;
-    display: flex;
-    @include hide-scrollbars;
-  }
-  li {
-    display: inline;
-    flex-shrink: 0;
-    &:not(:last-of-type) {
-      &::after {
-        content: "/";
-        opacity: 0.5;
-        margin-inline-start: 8px;
-        font-size: 12px;
-      }
-    }
-    &:not(:first-of-type) {
-      margin-inline-start: 8px;
-    }
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-    opacity: 0.5;
-    &:hover {
-      opacity: 1;
-    }
-  }
-}
-
 .t4-mobile-nav {
   &__content {
     &::after {
@@ -83,9 +44,11 @@ hr {
       background-position: bottom;
       height: 406px;
       opacity: 0.2;
+      z-index: -1;
     }
   }
 }
+/*! purgecss start ignore */
 .site-body {
   .splide {
     &__pagination {
@@ -120,23 +83,17 @@ hr {
   }
 }
 
-.ff-helper {
-  display: inline-block;
-  position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    inset: -0.5rem -1rem;
-    background-color: var(--t4-accent);
-    color: var(--t4-on-accent);
-    transform: skewX(-15deg);
-    border-radius: var(--radius-2);
-    z-index: -1;
-  }
-}
 iconify-icon {
   display: inline-block;
   width: 1.2em;
   height: 1.2em;
   vertical-align: middle;
 }
+
+.woocommerce,
+.woocommerce-page {
+  img {
+    height: revert-layer;
+  }
+}
+/*! purgecss end ignore */

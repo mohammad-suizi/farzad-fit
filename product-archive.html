@@ -1,1208 +1,614 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farzad Fit • Product Archive</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farzad Fit • Product Archive</title>
+    <!-- Start Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- End Favicon -->
 
-  <!-- Start Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <!-- End Favicon -->
+    <script type="module" src="/script/general.js"></script>
+    <link rel="stylesheet" href="/styles/general.scss" />
+    <link rel="stylesheet" href="/styles/pages/product-archive.scss" />
+  </head>
 
-  <!-- Start Script -->
-  <script src="/assets/js/alpine-mask.min.js" defer></script>
-  <script src="/assets/js/alpine.min.js" defer></script>
-  <script src="/assets/js/micromodal.min.js" defer></script>
-  <!-- End Script -->
-
-  <link rel="stylesheet" href="styles/general.scss">
-  <link rel="stylesheet" href="styles/pages/product-archive.scss">
-</head>
-
-<body class="site-body">
-  <header class="site-header">
-    <div class="navbar container">
-      <div class="navbar__logo">
-        <a href="#" class="logo">
-          <img src="/assets/img/logo.png" height="44" alt="Farzad Fit">
-          <div>
-            <span>فرزاد فیت</span>
-            <p>شعار فرزاد فیت</p>
-          </div>
-        </a>
-      </div>
-      <div class="navbar__menu">
-        <ul class="main-menu">
-          <li>
-            <a href="#">عنوان اول</a>
-          </li>
-          <li class="-has-child">
-            <a href="#">عنوان دوم</a>
-            <ul>
-              <li>
-                <a href="#">زیرعنوان اول</a>
-              </li>
-              <li>
-                <a href="#">زیرعنوان دوم</a>
-              </li>
-              <li>
-                <a href="#">زیرعنوان سوم</a>
-              </li>
-              <li>
-                <a href="#">زیرعنوان چهارم</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">عنوان سوم</a>
-          </li>
-          <li>
-            <a href="#">عنوام چهارم</a>
-          </li>
-          <li>
-            <a href="#">عنوان پنجم</a>
-          </li>
-        </ul>
-      </div>
-      <div class="navbar__actions">
-        <!-- add "-show-result" to showing result -->
-        <form x-data="{ open: false }" @click.away="if (open) open = false" :class="{ '-open': open }" action=""
-          class="searchform">
-          <button @click="open = !open" class="t4-btn -outlined -primary -icon-only searchform__btn" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M17.5 17.5L22 22m-2-11a9 9 0 1 0-18 0a9 9 0 0 0 18 0" color="currentColor" />
-            </svg>
+  <body class="site-body">
+    <header class="site-header">
+      <div class="navbar container">
+        <div class="navbar__logo">
+          <a href="#" class="logo">
+            <img src="/assets/img/logo.png" height="44" alt="Farzad Fit" />
+            <p>فرزاد <span class="-c-accent">فیت</span></p>
+          </a>
+        </div>
+        <div class="navbar__menu">
+          <ul class="main-menu">
+            <li class="-current">
+              <a href="#">صفحه اصلی</a>
+            </li>
+            <li>
+              <a href="#">درباره فرزاد فیت</a>
+            </li>
+            <li class="-has-child">
+              <a href="#">خدمات</a>
+              <ul>
+                <li>
+                  <a href="#">خدمات اول</a>
+                </li>
+                <li>
+                  <a href="#">خدمات دوم</a>
+                </li>
+                <li>
+                  <a href="#">خدمات سوم</a>
+                </li>
+                <li>
+                  <a href="#">خدمات چهارم</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">تعرفه‌ها</a>
+            </li>
+            <li>
+              <a href="#">وبلاگ</a>
+            </li>
+            <li>
+              <a href="#">تماس با ما</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar__actions">
+          <button class="t4-btn faq-btn">
+            <iconify-icon
+              icon="hugeicons:message-question"
+              width="1.2em"
+              height="1.2em"
+            ></iconify-icon>
+            <span class="t4-btn__text">سوالات متداول</span>
           </button>
-          <div class="searchform__content">
-            <div class="input-wrapper">
-              <button type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
-                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width="2" d="m20 20l-4.05-4.05m0 0a7 7 0 1 0-9.9-9.9a7 7 0 0 0 9.9 9.9" />
-                </svg>
-              </button>
-              <input type="search" name="" placeholder="جستجو...">
-            </div>
-            <div class="result">
-              <ul class="result__list">
+          <button class="t4-btn -filled -accent">
+            <span class="t4-btn__text">‌ورود / ثبت‌نام</span>
+          </button>
+          <!-- <div
+            x-data="{ open: false }"
+            @click.away="if (open) open = false"
+            class="user-menu"
+          >
+            <button
+              @click="open = !open"
+              class="t4-btn -filled -accent user-menu__btn"
+            >
+              <iconify-icon
+                icon="hugeicons:user-circle-02"
+                width="1.2em"
+                height="1.2em"
+              ></iconify-icon>
+              <span class="t4-btn__text">حساب کاربری</span>
+            </button>
+            <div x-show="open" x-transition class="user-menu__content">
+              <a href="#" class="user">
+                <div class="user__img">
+                  <img src="/assets/img/user-img.jpg" alt="" />
+                </div>
+                <div>
+                  <span class="user__name">فرزداد صابرعلی</span>
+                  <div class="user__role">کاربر عادی</div>
+                </div>
+              </a>
+              <hr />
+              <ul class="list">
                 <li>
-                  <a href="#">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                  <a href="#" class="list__item">
+                    <iconify-icon
+                      icon="hugeicons:logout-04"
+                      width="1.2em"
+                      height="1.2em"
+                    ></iconify-icon>
+                    <span>خروج</span>
                   </a>
                 </li>
               </ul>
-              <p class="result__not-found">متاسفانه موردی یافت نشد.</p>
             </div>
-          </div>
-        </form>
-        <button class="t4-btn -outlined -primary -icon-only menu-btn" open-mobile-nav>
-          <svg xmlns="http://www.w3.org/2000/svg" class="normal" width="20" height="20" viewBox="0 0 24 24">
-            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M2 18c0-1.54 0-2.31.347-2.876c.194-.317.46-.583.777-.777C3.689 14 4.46 14 6 14s2.31 0 2.876.347c.317.194.583.46.777.777C10 15.689 10 16.46 10 18s0 2.31-.347 2.877c-.194.316-.46.582-.777.776C8.311 22 7.54 22 6 22s-2.31 0-2.876-.347a2.35 2.35 0 0 1-.777-.776C2 20.31 2 19.54 2 18m12 0c0-1.54 0-2.31.347-2.876c.194-.317.46-.583.777-.777C15.689 14 16.46 14 18 14s2.31 0 2.877.347c.316.194.582.46.776.777C22 15.689 22 16.46 22 18s0 2.31-.347 2.877a2.36 2.36 0 0 1-.776.776C20.31 22 19.54 22 18 22s-2.31 0-2.876-.347a2.35 2.35 0 0 1-.777-.776C14 20.31 14 19.54 14 18M2 6c0-1.54 0-2.31.347-2.876c.194-.317.46-.583.777-.777C3.689 2 4.46 2 6 2s2.31 0 2.876.347c.317.194.583.46.777.777C10 3.689 10 4.46 10 6s0 2.31-.347 2.876c-.194.317-.46.583-.777.777C8.311 10 7.54 10 6 10s-2.31 0-2.876-.347a2.35 2.35 0 0 1-.777-.777C2 8.311 2 7.54 2 6m12 0c0-1.54 0-2.31.347-2.876c.194-.317.46-.583.777-.777C15.689 2 16.46 2 18 2s2.31 0 2.877.347c.316.194.582.46.776.777C22 3.689 22 4.46 22 6s0 2.31-.347 2.876c-.194.317-.46.583-.776.777C20.31 10 19.54 10 18 10s-2.31 0-2.876-.347a2.35 2.35 0 0 1-.777-.777C14 8.311 14 7.54 14 6"
-              color="currentColor" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" class="close" width="24" height="24" viewBox="0 0 24 24">
-            <path fill="currentColor"
-              d="M13.46 12L19 17.54V19h-1.46L12 13.46L6.46 19H5v-1.46L10.54 12L5 6.46V5h1.46L12 10.54L17.54 5H19v1.46z" />
-          </svg>
-        </button>
-        <div x-data="{ open: false }" @click.away="if (open) open = false" :class="{ '-open': open }" class="user-menu">
-          <button @click="open = !open" class="t4-btn -filled -primary -icon-only user-menu__btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M6.578 15.482c-1.415.842-5.125 2.562-2.865 4.715C4.816 21.248 6.045 22 7.59 22h8.818c1.546 0 2.775-.752 3.878-1.803c2.26-2.153-1.45-3.873-2.865-4.715a10.66 10.66 0 0 0-10.844 0M16.5 6.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0"
-                color="currentColor" />
-            </svg>
+          </div> -->
+          <button
+            class="t4-btn -outlined -primary -icon-only menu-btn"
+            open-mobile-nav
+          >
+            <iconify-icon
+              icon="cil:hamburger-menu"
+              width="1.2em"
+              height="1.2em"
+              class="open-icon"
+              noobserver
+            ></iconify-icon>
+            <iconify-icon
+              icon="mingcute:close-line"
+              class="close-icon"
+              width="1.2em"
+              height="1.2em"
+              noobserver
+            ></iconify-icon>
           </button>
-          <div class="user-menu__content">
-            <a href="#" class="user">
-              <div class="user__img">
-                <img src="/assets/img/user-img.jpg" alt="">
-              </div>
-              <div>
-                <span class="user__name">فرزداد صابرعلی</span>
-                <div class="user__role">کاربر عادی</div>
-              </div>
-            </a>
-            <hr>
-            <ul class="list">
-              <li>
-                <button class="list__item" data-t4-modal-open="login-register__modal">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                      d="M12 19.2c-2.5 0-4.71-1.28-6-3.2c.03-2 4-3.1 6-3.1s5.97 1.1 6 3.1a7.23 7.23 0 0 1-6 3.2M12 5a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-3A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10c0-5.53-4.5-10-10-10" />
-                  </svg>
-                  <span>ورود / ثبت نام</span>
-                </button>
-              </li>
-              <li>
-                <a href="#" class="list__item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                      d="M6 2h9a2 2 0 0 1 2 2v1a1 1 0 0 1-2 0V4H6v16h9v-1a1 1 0 0 1 2 0v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2" />
-                    <path fill="currentColor"
-                      d="M16.795 16.295c.39.39 1.02.39 1.41 0l3.588-3.588a1 1 0 0 0 0-1.414l-3.588-3.588a.999.999 0 0 0-1.411 1.411L18.67 11H10a1 1 0 0 0 0 2h8.67l-1.876 1.884a.999.999 0 0 0 .001 1.411" />
-                  </svg>
-                  <span>خروج</span>
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
-
-    </div>
-  </header>
-  <main class="site-main">
-    <section class="product-grid container">
-      <div class="card-wrapper">
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-01.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
+    </header>
+    <main class="site-main">
+      <section class="container mt-6">
+        <div>
+          <nav class="breadcrumb">
+            <a href="#">خانه</a>
+            <span>/</span>
+            <a href="#">وبلاگ</a>
+            <span>/</span>
+            <h1>تغذیه</h1>
+          </nav>
+        </div>
+      </section>
+      <section class="container mt-8">
+        <div class="card-wrapper">
+          <div class="card-product">
+            <div class="card-product__img-box">
+              <a href="#" class="img-link">
+                <img src="/assets/img/product-img-01.webp" alt="" />
+              </a>
             </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
+            <div class="card-product__cnt-box">
+              <h3 class="title">
+                <a href="#" class="title-link"
+                  >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a
+                >
+              </h3>
+              <div class="bottom">
+                <div class="discount-badge">
+                  <span>تخفیف ویژه</span>
+                </div>
+                <div class="price">
+                  <ins>
+                    <span class="price__amount">46,000</span>
+                    <span class="price__unit">تومان</span>
+                  </ins>
+                  <del>
+                    <span class="price__amount">59,000</span>
+                    <span class="price__unit">تومان</span>
+                  </del>
+                </div>
+              </div>
+              <button class="action-btn -add-to-cart">
+                <span class="text">افزودن به سبد خرید</span>
+              </button>
+            </div>
+          </div>
+          <div class="card-product">
+            <div class="card-product__img-box">
+              <a href="#" class="img-link">
+                <img src="/assets/img/product-img-02.webp" alt="" />
+              </a>
+            </div>
+            <div class="card-product__cnt-box">
+              <h3 class="title">
+                <a href="#" class="title-link"
+                  >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a
+                >
+              </h3>
+              <div class="bottom">
+                <div class="discount-badge">
+                  <span>تخفیف ویژه</span>
+                </div>
+                <div class="price">
+                  <ins>
+                    <span class="price__amount">46,000</span>
+                    <span class="price__unit">تومان</span>
+                  </ins>
+                  <del>
+                    <span class="price__amount">59,000</span>
+                    <span class="price__unit">تومان</span>
+                  </del>
+                </div>
+              </div>
+              <button class="action-btn -add-to-cart">
+                <span class="text">افزودن به سبد خرید</span>
+              </button>
+            </div>
+          </div>
+          <div class="card-product">
+            <div class="card-product__img-box">
+              <a href="#" class="img-link">
+                <img src="/assets/img/product-img-03.webp" alt="" />
+              </a>
+            </div>
+            <div class="card-product__cnt-box">
+              <h3 class="title">
+                <a href="#" class="title-link"
+                  >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a
+                >
+              </h3>
+              <div class="bottom">
+                <div class="discount-badge">
+                  <span>تخفیف ویژه</span>
+                </div>
+                <div class="price">
+                  <ins>
+                    <span class="price__amount">46,000</span>
+                    <span class="price__unit">تومان</span>
+                  </ins>
+                  <del>
+                    <span class="price__amount">59,000</span>
+                    <span class="price__unit">تومان</span>
+                  </del>
+                </div>
+              </div>
+              <button class="action-btn -add-to-cart">
+                <span class="text">افزودن به سبد خرید</span>
+              </button>
+            </div>
+          </div>
+          <div class="card-product">
+            <div class="card-product__img-box">
+              <a href="#" class="img-link">
+                <img src="/assets/img/product-img-04.webp" alt="" />
+              </a>
+            </div>
+            <div class="card-product__cnt-box">
+              <h3 class="title">
+                <a href="#" class="title-link"
+                  >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a
+                >
+              </h3>
+              <div class="bottom">
+                <div class="discount-badge">
+                  <span>تخفیف ویژه</span>
+                </div>
+                <div class="price">
+                  <ins>
+                    <span class="price__amount">46,000</span>
+                    <span class="price__unit">تومان</span>
+                  </ins>
+                  <del>
+                    <span class="price__amount">59,000</span>
+                    <span class="price__unit">تومان</span>
+                  </del>
+                </div>
+              </div>
+              <button class="action-btn -add-to-cart">
+                <span class="text">افزودن به سبد خرید</span>
+              </button>
+            </div>
+          </div>
+          <div class="card-product">
+            <div class="card-product__img-box">
+              <a href="#" class="img-link">
+                <img src="/assets/img/product-img-05.webp" alt="" />
+              </a>
+            </div>
+            <div class="card-product__cnt-box">
+              <h3 class="title">
+                <a href="#" class="title-link"
+                  >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a
+                >
+              </h3>
+              <div class="bottom">
+                <div class="discount-badge">
+                  <span>تخفیف ویژه</span>
+                </div>
+                <div class="price">
+                  <ins>
+                    <span class="price__amount">46,000</span>
+                    <span class="price__unit">تومان</span>
+                  </ins>
+                  <del>
+                    <span class="price__amount">59,000</span>
+                    <span class="price__unit">تومان</span>
+                  </del>
+                </div>
+              </div>
+              <button class="action-btn -add-to-cart">
+                <span class="text">افزودن به سبد خرید</span>
+              </button>
+            </div>
+          </div>
+          <div class="card-product">
+            <div class="card-product__img-box">
+              <a href="#" class="img-link">
+                <img src="/assets/img/product-img-06.webp" alt="" />
+              </a>
+            </div>
+            <div class="card-product__cnt-box">
+              <h3 class="title">
+                <a href="#" class="title-link"
+                  >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a
+                >
+              </h3>
+              <div class="bottom">
+                <div class="discount-badge">
+                  <span>تخفیف ویژه</span>
+                </div>
+                <div class="price">
+                  <ins>
+                    <span class="price__amount">46,000</span>
+                    <span class="price__unit">تومان</span>
+                  </ins>
+                  <del>
+                    <span class="price__amount">59,000</span>
+                    <span class="price__unit">تومان</span>
+                  </del>
+                </div>
+              </div>
+              <button class="action-btn -add-to-cart">
+                <span class="text">افزودن به سبد خرید</span>
+              </button>
+            </div>
           </div>
         </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-02.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
+        <div class="pagination mt-6">
+          <a href="#" class="pagination__item">
+            <iconify-icon
+              icon="hugeicons:arrow-right-02"
+              width="1em"
+              height="1em"
+            ></iconify-icon>
+          </a>
+          <a href="#" class="pagination__item">1</a>
+          <a href="#" class="pagination__item">2</a>
+          <span class="pagination__item -current">3</span>
+          <a href="#" class="pagination__item">4</a>
+          <a href="#" class="pagination__item">5</a>
+          <a href="#" class="pagination__item">6</a>
+          <a href="#" class="pagination__item">7</a>
+          <a href="#" class="pagination__item">
+            <iconify-icon
+              icon="hugeicons:arrow-left-02"
+              width="1em"
+              height="1em"
+            ></iconify-icon>
+          </a>
         </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-03.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-04.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-05.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-06.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-07.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-08.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-09.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-10.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-11.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-12.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-13.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-14.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-15.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-16.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-17.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-18.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-19.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-        <div class="card-product">
-          <div class="card-product__img-box">
-            <a href="#" class="img-link">
-              <img src="/assets/img/product-img-20.webp" alt="">
-            </a>
-          </div>
-          <div class="card-product__cnt-box">
-            <h3 class="title">
-              <a href="#" class="title-link">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a>
-            </h3>
-            <div class="bottom">
-              <div class="discount-badge">
-                <span>تخفیف ویژه</span>
-              </div>
-              <div class="price">
-                <ins>
-                  <span class="price__amount">46,000</span>
-                  <span class="price__unit">تومان</span>
-                </ins>
-                <del>
-                  <span class="price__amount">59,000</span>
-                  <span class="price__unit">تومان</span>
-                </del>
-              </div>
-            </div>
-            <button class="action-btn -add-to-cart">
-              <span class="text">افزودن به سبد خرید</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="site-footer__main container footer">
-      <div class="footer__top">
-        <a href="#" class="logo">
-          <img src="/assets/img/logo-dark.webp" height="44" alt="Farzad Fit">
-          <div>
-            <span>فرزاد فیت</span>
-            <p>شعار فرزاد فیت</p>
-          </div>
-        </a>
-        <a href="#" class="t4-btn -filled -accent">
-          <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
-            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              color="currentColor">
-              <path d="M15 2.5V4c0 1.414 0 2.121.44 2.56C15.878 7 16.585 7 18 7h1.5" />
-              <path
-                d="M4 16V8c0-2.828 0-4.243.879-5.121C5.757 2 7.172 2 10 2h4.172c.408 0 .613 0 .797.076c.183.076.328.22.617.51l3.828 3.828c.29.29.434.434.51.618c.076.183.076.388.076.796V16c0 2.828 0 4.243-.879 5.121C18.243 22 16.828 22 14 22h-4c-2.828 0-4.243 0-5.121-.879C4 20.243 4 18.828 4 16m4-5h8m-8 3h8m-8 3h4.17" />
-            </g>
-          </svg>
-          <span class="text">دریافت برنامه</span>
-        </a>
-      </div>
-      <div class="footer__right">
-        <div class="wp-content -fs-p-6">
+      </section>
+      <section class="container seo-box mt-12" x-data="{ open: false }">
+        <div
+          class="wp-content"
+          x-show="open"
+          x-collapse.min.240px.duration.1000ms
+        >
+          <h2>
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+            استفاده از طراحان گرافیک است.
+          </h2>
           <p>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
-            بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
-            با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی
+            در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را
+            می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
+            الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این
+            صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و
+            شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای
+            اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد
+            استفاده قرار گیرد.
+          </p>
+          <figure>
+            <img src="/assets/img/pexels-mastercowley-634030.webp" alt="" />
+            <figcaption>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است.
+            </figcaption>
+          </figure>
+
+          <h2>
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+            استفاده از طراحان گرافیک است.
+          </h2>
+          <p>
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی
+            در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را
+            می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
+            الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این
+            صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و
+            شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای
+            اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد
+            استفاده قرار گیرد.
           </p>
         </div>
-      </div>
-      <div class="footer__center">
-        <h2 class="-fs-h-5 mb-4">منوی فوتر</h2>
-        <ul class="footer-menu">
-          <li>
-            <a href="#" class="footer-menu__item">منوی اول</a>
-          </li>
-          <li>
-            <a href="#" class="footer-menu__item">منوی دوم</a>
-          </li>
-          <li>
-            <a href="#" class="footer-menu__item">منوی سوم</a>
-          </li>
-          <li>
-            <a href="#" class="footer-menu__item">منوی چهارم</a>
-          </li>
-          <li>
-            <a href="#" class="footer-menu__item">منوی پنجم</a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer__center">
-        <h2 class="-fs-h-5 mb-4">منوی فوتر</h2>
-        <ul class="footer-menu">
-          <li>
-            <a href="#" class="footer-menu__item">منوی اول</a>
-          </li>
-          <li>
-            <a href="#" class="footer-menu__item">منوی دوم</a>
-          </li>
-          <li>
-            <a href="#" class="footer-menu__item">منوی سوم</a>
-          </li>
-          <li>
-            <a href="#" class="footer-menu__item">منوی چهارم</a>
-          </li>
-          <li>
-            <a href="#" class="footer-menu__item">منوی پنجم</a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer__left">
-        <h2 class="-fs-h-5 mb-4">تماس با ما</h2>
-        <ul class="contact-us">
-          <li>
-            <a href="#" class="contact-us__item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
-                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  color="currentColor">
-                  <path
-                    d="M14.5 9a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0m3.722 8c1.395 1.988 2.062 3.047 1.665 3.9q-.06.128-.14.247c-.575.853-2.06.853-5.03.853H9.283c-2.97 0-4.454 0-5.029-.853a2 2 0 0 1-.14-.247c-.397-.852.27-1.912 1.665-3.9" />
-                  <path
-                    d="M13.257 17.494a1.813 1.813 0 0 1-2.514 0c-3.089-2.993-7.228-6.336-5.21-11.19C6.626 3.679 9.246 2 12 2s5.375 1.68 6.467 4.304c2.016 4.847-2.113 8.207-5.21 11.19" />
-                </g>
-              </svg>
-              <span class="text">مشهد - وکیل أباد 25 - پلاک 136</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="contact-us__item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
-                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  color="currentColor">
-                  <path
-                    d="m4.74 14.369l1.954-1.387a5.3 5.3 0 0 1 1.746-.823c.732-.195 1.06-.595 1.06-1.448c0-2.165 5-2.395 5 0c0 .853.328 1.253 1.06 1.447c.642.172 1.2.435 1.746.824l1.954 1.386c.883.628 1.295.931 1.524 1.414c.216.454.216.986.216 2.05c0 1.914 0 2.871-.536 3.484c-.649.743-2.336.68-3.372.68H6.908c-1.036 0-2.689.103-3.372-.68C3 20.703 3 19.746 3 17.832c0-1.064 0-1.596.216-2.05c.23-.482.64-.786 1.524-1.414" />
-                  <path
-                    d="M14 17a2 2 0 1 1-4 0a2 2 0 0 1 4 0M6.96 3.698c-1.318.376-2.266.843-3.134 1.407c-1.373.892-1.962 2.499-1.8 4.05c.068.656.595.97 1.205.8c.464-.13.928-.255 1.389-.391c1.347-.4 1.664-.886 1.851-2.265zm0 0c3.259-.93 6.821-.93 10.08 0m0 0c1.318.376 2.266.843 3.134 1.407c1.373.892 1.962 2.499 1.8 4.05c-.068.656-.595.97-1.205.8c-.463-.13-.928-.255-1.389-.391c-1.347-.4-1.664-.886-1.851-2.265z" />
-                </g>
-              </svg>
-              <span class="text">051-12345678</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="site-footer__bottom container">
-      <div class="copyright wp-content container">
-        <small>© کلیه حقوق مادی و معنوی این سایت متعلق به شرکت <a href="#">تیک۴</a> می‌باشد.</small>
-      </div>
-    </div>
-  </footer>
-  <div class="t4-mobile-nav">
-    <div class="t4-mobile-nav__overlay" close-mobile-nav></div>
-    <nav class="t4-mobile-nav__content sidebar">
-      <main class="sidebar__main">
-        <ul class="mobile-menu">
-          <li>
-            <a href="#">عنوان اول</a>
-          </li>
-          <li class="-has-child">
-            <a href="#">عنوان دوم</a>
-            <ul>
-              <li>
-                <a href="#">زیرعنوان اول</a>
-              </li>
-              <li>
-                <a href="#">زیرعنوان دوم</a>
-              </li>
-              <li>
-                <a href="#">زیرعنوان سوم</a>
-              </li>
-              <li>
-                <a href="#">زیرعنوان چهارم</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">عنوان سوم</a>
-          </li>
-          <li>
-            <a href="#">عنوام چهارم</a>
-          </li>
-          <li>
-            <a href="#">عنوان پنجم</a>
-          </li>
-        </ul>
-      </main>
-    </nav>
-    <script id="t4-mobile-nav__script">
-      let mobileNav = document.querySelector('.t4-mobile-nav')
-      let mobileNavCloseElems = mobileNav.querySelectorAll('[close-mobile-nav]')
-      let mobileNavOpenElems = document.querySelectorAll('[open-mobile-nav]')
-      let mobileNavMenuhHasChildElems = mobileNav.querySelectorAll('.mobile-menu .-has-child')
-      mobileNavCloseElems.forEach(item => {
-        item.addEventListener("click", () => {
-          mobileNav.classList.remove("-open")
-          document.body.classList.remove("-open-mobile-nav")
-        })
-      })
-      mobileNavOpenElems.forEach(item => {
-        item.addEventListener("click", () => {
-          mobileNav.classList.toggle("-open")
-          document.body.classList.toggle("-open-mobile-nav")
-        })
-      })
-      mobileNavMenuhHasChildElems.forEach(item => {
-        item.addEventListener("click", e => {
-          e.preventDefault()
-          item.classList.toggle("-open")
-        })
-      })
-    </script>
-  </div>
-  <div class="t4-mobile-menu">
-    <nav class="navbar container">
-      <a href="#" class="navbar__item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
-          <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
-            color="currentColor">
-            <path
-              d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12" />
-            <path
-              d="M11 7.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0m3 4.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0m3 4.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0" />
-          </g>
-        </svg>
-        <span class="text">مجله آموزشی</span>
-      </a>
-      <a href="#" class="navbar__item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
-          <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
-            color="currentColor">
-            <path
-              d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12" />
-            <path
-              d="M11 7.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0m3 4.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0m3 4.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0" />
-          </g>
-        </svg>
-        <span class="text">مجله آموزشی</span>
-      </a>
-      <a href="#" class="navbar__item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
-          <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
-            color="currentColor">
-            <path
-              d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12" />
-            <path
-              d="M11 7.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0m3 4.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0m3 4.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0" />
-          </g>
-        </svg>
-        <span class="text">مجله آموزشی</span>
-      </a>
-      <a href="#" class="navbar__item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
-          <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
-            color="currentColor">
-            <path
-              d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12" />
-            <path
-              d="M11 7.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0m3 4.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0m3 4.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0" />
-          </g>
-        </svg>
-        <span class="text">مجله آموزشی</span>
-      </a>
-      <a href="#" class="navbar__item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
-          <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
-            color="currentColor">
-            <path
-              d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12" />
-            <path
-              d="M11 7.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0m3 4.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0m3 4.5h6m-9 0a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0" />
-          </g>
-        </svg>
-        <span class="text">مجله آموزشی</span>
-      </a>
-    </nav>
-  </div>
-  <div class="t4-modal -slide" id="login-register__modal" aria-hidden="true">
-    <div class="t4-modal__overlay login-register" tabindex="-1" data-t4-modal-close>
-      <div class="t4-modal__content">
-        <header class="t4-modal__header">
-          <h2 class="modal__title">ورود / ثبت نام</h2>
-          <button class="modal__close" data-t4-modal-close></button>
-        </header>
-        <main class="t4-modal__main login-register">
-          <div class="login-register__step -step-1" role="dialog" aria-modal="true" aria-labelledby="">
-            <p class="step-desc">جهت ورود لطفا شماره موبایل خود را وارد کنید.</p>
-            <p class="validation-text -error mt-8">کد امنیتی صحیح نمی باشد.</p>
-            <div class="mt-24 phone-input" x-data="{ phone: '' ,  rawPhone: ''}"
-              x-init="$watch('phone', value => rawPhone = value.replace(/\D/g, ''))">
-              <label for="login-phone">شماره موبایل</label>
-              <input type="tel" id="login-phone" placeholder="09123456789" x-model="phone"
-                x-mask:dynamic="'9999-999-9999'">
-              <input type="tel" hidden x-model="rawPhone">
+        <div class="read-more" :class="open ? '-open' : ''">
+          <button class="read-more__btn" @click="open = ! open">
+            <iconify-icon
+              icon="hugeicons:arrow-down-01"
+              width="1.2em"
+              height="1.2em"
+            ></iconify-icon>
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer__main container footer">
+        <div class="footer__top">
+          <a href="#" class="logo">
+            <img
+              src="/assets/img/logo-dark.webp"
+              height="44"
+              alt="Farzad Fit"
+            />
+            <div>
+              <span>فرزاد فیت</span>
+              <p>شعار فرزاد فیت</p>
             </div>
-            <div class="mt-24 captcha-input">
-              <label for="login-captcha">کد امنیتی</label>
-              <div class="input-wrapper">
-                <input type="text" id="login-captcha" inputmode="numeric" placeholder="- - - -" maxlength="4">
-                <img src="https://tik4.com/wp-content/themes/tik4/captcha/captcha.php?rand=1693058073"
-                  id="captcha-image">
-              </div>
-            </div>
-            <p class="terms-conditions mt-24">
-              ثبت نام در تیک4 به معنی پذیرش <a href="#" data-t4-modal-open="terms-conditions__modal">قوانین و مقررات</a>
-              است.
+          </a>
+          <a href="#" class="t4-btn -filled -accent">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1.2em"
+              height="1.2em"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                color="currentColor"
+              >
+                <path
+                  d="M15 2.5V4c0 1.414 0 2.121.44 2.56C15.878 7 16.585 7 18 7h1.5"
+                />
+                <path
+                  d="M4 16V8c0-2.828 0-4.243.879-5.121C5.757 2 7.172 2 10 2h4.172c.408 0 .613 0 .797.076c.183.076.328.22.617.51l3.828 3.828c.29.29.434.434.51.618c.076.183.076.388.076.796V16c0 2.828 0 4.243-.879 5.121C18.243 22 16.828 22 14 22h-4c-2.828 0-4.243 0-5.121-.879C4 20.243 4 18.828 4 16m4-5h8m-8 3h8m-8 3h4.17"
+                />
+              </g>
+            </svg>
+            <span class="text">دریافت برنامه</span>
+          </a>
+        </div>
+        <div class="footer__right">
+          <div class="wp-content -fs-p-6">
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+              نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+              کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان
+              جامعه
             </p>
-            <button class="t4-btn -filled -wide mt-24" id="next-btn">
-              <span class="text">ادامه</span>
-            </button>
           </div>
-          <div class="login-register__step -step-2" role="dialog" aria-modal="true" aria-labelledby=""
-            style="display: none;">
-            <p class="step-desc">
-              کد به شماره <span id="phone-number-entered">09359251138</span> ارسال شد. کد را در کادر زیر وارد کنید.
-            </p>
-            <button class="change-phone mt-8" id="change-phone-number">تغییر شماره تلفن</button>
-            <p class="validation-text -error mt-8">کد وارد شده صحیح نمی باشد</p>
-            <div class="mt-24 otp-input">
-              <input type="text" maxlength="1" class="otp-input__item" autocomplete="one-time-code" inputmode="numeric">
-              <input type="text" maxlength="1" class="otp-input__item" autocomplete="one-time-code" inputmode="numeric">
-              <input type="text" maxlength="1" class="otp-input__item" autocomplete="one-time-code" inputmode="numeric">
-              <input type="text" maxlength="1" class="otp-input__item" autocomplete="one-time-code" inputmode="numeric">
-              <input type="hidden" id="otp-hidden" name="otp">
-              <script id="otp__script">
-                document.addEventListener("DOMContentLoaded", () => {
-                  const otpInputs = document.querySelectorAll(".login-register .otp-input__item");
-                  const otpHidden = document.querySelector(".login-register #otp-hidden");
-
-                  otpInputs.forEach((input, index) => {
-                    input.addEventListener("input", (event) => {
-                      let value = event.target.value;
-                      value = value.replace(/[^\d۰-۹]/g, ''); // حذف کاراکترهای غیر عددی
-
-                      if (value.length === 1) {
-                        input.value = toEnglishDigits(value);
-                        if (index < otpInputs.length - 1) {
-                          otpInputs[index + 1].focus();
-                        }
-                      } else {
-                        input.value = "";
-                      }
-
-                      updateHiddenInput();
-                    });
-
-                    input.addEventListener("keydown", (event) => {
-                      if (event.key === "Backspace" && event.target.value === "" && index > 0) {
-                        otpInputs[index - 1].focus();
-                      }
-                    });
-
-                    input.addEventListener("paste", (event) => {
-                      event.preventDefault(); // جلوگیری از پیست کردن مقادیر
-                    });
-                  });
-
-                  function updateHiddenInput() {
-                    const otpValue = Array.from(otpInputs).map(input => input.value).join('');
-                    otpHidden.value = otpValue;
-                  }
-
-                  function toEnglishDigits(str) {
-                    const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-                    const englishDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-                    return str.replace(/[۰-۹]/g, (w) => englishDigits[persianDigits.indexOf(w)]);
-                  }
-                });
-
-              </script>
-            </div>
-            <div class="resend-code mt-24">
-              <span class="resend-code__countdown">
-                <span class="minute">02</span>:<span class="secound">00</span>
-              </span>
-              تا پایان اعتبار کد ارسالی
-            </div>
-            <script>
-              function startCountdown(endTime, minuteElem, secoundElem, endingCallback) {
-                const second = 1000, minute = second * 60, hour = minute * 60
-                let countdownInterval = setInterval(() => {
-                  endTime = endTime - second;
-                  minuteElem.innerText = Math.floor((endTime % (hour)) / (minute)).toLocaleString(undefined, { minimumIntegerDigits: 2 });
-                  secoundElem.innerText = Math.floor((endTime % (minute)) / second).toLocaleString(undefined, { minimumIntegerDigits: 2 });
-                  if (endTime < 0) {
-                    clearInterval(countdownInterval);
-                    endingCallback()
-                  }
-                }, second)
-              }
-              let resendCodeElem = document.querySelector('.login-register .resend-code')
-              startCountdown(
-                120000,
-                resendCodeElem.querySelector('.resend-code__countdown .minute'),
-                resendCodeElem.querySelector('.resend-code__countdown .secound'),
-                () => {
-                  resendCodeElem.innerHTML = `
-                    کد فعال سازی را دریافت نکردید ؟ <button class="resend-code__btn">ارسال مجدد</button>
-                    `
-                })
-            </script>
-            <button class="t4-btn -filled -wide mt-24" id="submit-btn">
-              <span class="text">ادامه</span>
-            </button>
-          </div>
-        </main>
+        </div>
+        <div class="footer__center">
+          <h2 class="-fs-h-5 mb-4">منوی فوتر</h2>
+          <ul class="footer-menu">
+            <li>
+              <a href="#" class="footer-menu__item">منوی اول</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی دوم</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی سوم</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی چهارم</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی پنجم</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__center">
+          <h2 class="-fs-h-5 mb-4">منوی فوتر</h2>
+          <ul class="footer-menu">
+            <li>
+              <a href="#" class="footer-menu__item">منوی اول</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی دوم</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی سوم</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی چهارم</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی پنجم</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__left">
+          <h2 class="-fs-h-5 mb-4">تماس با ما</h2>
+          <ul class="contact-us">
+            <li>
+              <a href="#" class="contact-us__item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em"
+                  height="1.2em"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    color="currentColor"
+                  >
+                    <path
+                      d="M14.5 9a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0m3.722 8c1.395 1.988 2.062 3.047 1.665 3.9q-.06.128-.14.247c-.575.853-2.06.853-5.03.853H9.283c-2.97 0-4.454 0-5.029-.853a2 2 0 0 1-.14-.247c-.397-.852.27-1.912 1.665-3.9"
+                    />
+                    <path
+                      d="M13.257 17.494a1.813 1.813 0 0 1-2.514 0c-3.089-2.993-7.228-6.336-5.21-11.19C6.626 3.679 9.246 2 12 2s5.375 1.68 6.467 4.304c2.016 4.847-2.113 8.207-5.21 11.19"
+                    />
+                  </g>
+                </svg>
+                <span class="text">مشهد - وکیل أباد 25 - پلاک 136</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="contact-us__item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em"
+                  height="1.2em"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    color="currentColor"
+                  >
+                    <path
+                      d="m4.74 14.369l1.954-1.387a5.3 5.3 0 0 1 1.746-.823c.732-.195 1.06-.595 1.06-1.448c0-2.165 5-2.395 5 0c0 .853.328 1.253 1.06 1.447c.642.172 1.2.435 1.746.824l1.954 1.386c.883.628 1.295.931 1.524 1.414c.216.454.216.986.216 2.05c0 1.914 0 2.871-.536 3.484c-.649.743-2.336.68-3.372.68H6.908c-1.036 0-2.689.103-3.372-.68C3 20.703 3 19.746 3 17.832c0-1.064 0-1.596.216-2.05c.23-.482.64-.786 1.524-1.414"
+                    />
+                    <path
+                      d="M14 17a2 2 0 1 1-4 0a2 2 0 0 1 4 0M6.96 3.698c-1.318.376-2.266.843-3.134 1.407c-1.373.892-1.962 2.499-1.8 4.05c.068.656.595.97 1.205.8c.464-.13.928-.255 1.389-.391c1.347-.4 1.664-.886 1.851-2.265zm0 0c3.259-.93 6.821-.93 10.08 0m0 0c1.318.376 2.266.843 3.134 1.407c1.373.892 1.962 2.499 1.8 4.05c-.068.656-.595.97-1.205.8c-.463-.13-.928-.255-1.389-.391c-1.347-.4-1.664-.886-1.851-2.265z"
+                    />
+                  </g>
+                </svg>
+                <span class="text">051-12345678</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="t4-modal -slide" id="terms-conditions__modal" aria-hidden="true">
-    <div class="t4-modal__overlay" tabindex="-1" data-t4-modal-close>
-      <div class="t4-modal__content" role="dialog" aria-modal="true" aria-labelledby="">
-        <header class="t4-modal__header">
-          <h2 class="modal__title">قوانین و مقررات</h2>
-          <button class="modal__close" data-t4-modal-close></button>
-        </header>
-        <main class="t4-modal__main">
-          <div class="wp-content">
-            <p>کاربر می‌پذیرد در صورتی که حساب کاربری به سبب یکی از موارد فوق‌الذکر مسدود شود، افتتاح مجدد حساب کاربری
-              در تیک۴ (غیر از بخش 1.4 ماده حاضر که یکی از حساب‌های کاربری پابرجا خواهد ماند)، دانلود مجدد کلیه محصولات
-              خریداری شده و پشتیبانی محصولاتی که از طریق حساب کاربری مسدود شده صورت گرفته است، امکان نخواهد داشت.</p>
-            <p>کاربر بدین‌وسیله هرگونه ادعایی را در این مورد از خود سلب و اسقاط می‌نماید.<br>
-              در صورتی که کاربر از سامانه تیک۴، محصول و یا خدمتی را خریداری نکرده باشد، تیک۴ می‌تواند بدون هیچ دلیلی
-              حساب کاربری وی را با ارسال اطلاعیه طبق بخش «چ» مسدود نماید و دسترسی کاربر مذکور به خدمات تیک4 را حذف
-              نماید.<br>
-              در صورتی که به هر دلیل دیگری حساب کاربری کاربر، مسدود شود، مقررات این ماده اعمال خواهد شد.</p>
-          </div>
-        </main>
+      <div class="site-footer__bottom container">
+        <div class="copyright wp-content container">
+          <small
+            >© کلیه حقوق مادی و معنوی این سایت متعلق به شرکت
+            <a href="#">تیک۴</a> می‌باشد.</small
+          >
+        </div>
       </div>
-    </div>
-  </div>
-</body>
-
+    </footer>
+  </body>
 </html>

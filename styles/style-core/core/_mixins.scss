@@ -135,3 +135,14 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+// Iconify
+@mixin iconify($svg, $width: 1.2em, $height: 1.2em) {
+  content: "";
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background-color: currentColor;
+  mask-image: $svg;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}

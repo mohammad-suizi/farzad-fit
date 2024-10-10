@@ -1,34 +1,40 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import autoprefixer from "autoprefixer";
-import mqpacker from "@hail2u/css-mqpacker";
 import cssnano from "cssnano";
 import purgecss from "@fullhuman/postcss-purgecss";
-import url from "postcss-url";
 
 const isProduction = process.env.NODE_ENV === "production";
 
-const postcssPlugins = [autoprefixer(), mqpacker(), cssnano()];
+const postcssPlugins = [autoprefixer(), cssnano()];
 
 if (isProduction) {
   postcssPlugins.push(
-    url({
-      url: (asset) => {
-        return asset.url.replace("/assets/", "../");
-      },
-    }),
     purgecss({
       content: [
-        "./index.html",
         "./blog-archive.html",
-        "./product-archive.html",
+        "./blog-single.html",
+        "./index.html",
+        "./page-404.html",
+        "./page-plan.html",
+        "./page-search.html",
+        "./page-woocommerce.html",
         "./page.html",
+        "./product-archive.html",
+        "./product-single.html",
       ],
       css: [
         "./styles/general.scss",
-        "./styles/pages/index.scss",
         "./styles/pages/blog-archive.scss",
+        "./styles/pages/blog-single.scss",
+        "./styles/pages/index.scss",
+        "./styles/pages/page-404.scss",
+        "./styles/pages/page-plan.scss",
+        "./styles/pages/page-search.scss",
+        "./styles/pages/page-woocommerce.scss",
         "./styles/pages/page.scss",
+        "./styles/pages/product-archive.scss",
+        "./styles/pages/product-single.scss",
       ],
       defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
     })
@@ -36,6 +42,7 @@ if (isProduction) {
 }
 
 export default defineConfig({
+  base: "./",
   css: {
     postcss: {
       plugins: postcssPlugins,
@@ -44,17 +51,26 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        index: resolve(__dirname, "./index.html"),
-        "blog-archive": resolve(__dirname, "./blog-archive.html"),
-        "product-archive": resolve(__dirname, "./product-archive.html"),
-        page: resolve(__dirname, "./page.html"),
+        "blog-archive-html": resolve(__dirname, "./blog-archive.html"),
+        "blog-single-html": resolve(__dirname, "./blog-single.html"),
+        "index-html": resolve(__dirname, "./index.html"),
+        "page-404-html": resolve(__dirname, "./page-404.html"),
+        "page-plan-html": resolve(__dirname, "./page-plan.html"),
+        "page-search-html": resolve(__dirname, "./page-search.html"),
+        "page-woocommerce-html": resolve(__dirname, "./page-woocommerce.html"),
+        "page-html": resolve(__dirname, "./page.html"),
+        "product-archive-html": resolve(__dirname, "./product-archive.html"),
+        "product-single-html": resolve(__dirname, "./product-single.html"),
       },
       output: {
+        entryFileNames: "assets/js/[name].js",
+        chunkFileNames: "assets/js/[name].js",
         assetFileNames: ({ name }) => {
           if (/\.css$/.test(name ?? "")) {
             return "assets/css/[name][extname]";
+          } else if (/\.js$/.test(name ?? "")) {
+            return "assets/js/[name][extname]";
           }
-          return "assets/[name][extname]";
         },
       },
     },

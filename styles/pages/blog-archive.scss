@@ -1,9 +1,100 @@
-@use "../components/card-blog";
-// @use "../libraries/splide";
-.blog-grid {
-  .card-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--spacing-6);
+@use "../components/card-blog" as *;
+
+.breadcrumb {
+  a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    opacity: 0.5;
+    transition: opacity 0.1s;
+    font-weight: 600;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  span {
+    opacity: 0.3;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+}
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  &__item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 2.5rem;
+    height: 2.5rem;
+    min-width: 2.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--t4-surface-low);
+    transition: color 0.1s, background-color 0.1s;
+    &:not(.-current) {
+      &:hover {
+        background-color: var(--t4-surface);
+      }
+    }
+    &.-current {
+      background-color: var(--t4-accent);
+      color: var(--t4-on-accent);
+    }
+  }
+}
+.seo-box {
+  background-color: var(--t4-surface-low);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  position: relative;
+  .read-more {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__btn {
+      width: 2.5rem;
+      height: 2.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2.5rem;
+      background-color: var(--t4-primary);
+      color: var(--t4-on-primary);
+      font-size: 1.25rem;
+      transition: 0.1s;
+      &:hover {
+        background-color: var(--t4-accent);
+        color: var(--t4-on-accent);
+      }
+    }
+    &.-open {
+      .read-more {
+        &__btn {
+          rotate: 0.5turn;
+          translate: 0 1.125rem;
+        }
+      }
+    }
+    &:not(.-open) {
+      min-height: 5rem;
+      border-radius: 1rem;
+      background-image: linear-gradient(
+        180deg,
+        transparent,
+        var(--t4-surface-low)
+      );
+    }
   }
 }

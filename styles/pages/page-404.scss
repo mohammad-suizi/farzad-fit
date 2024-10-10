@@ -1,0 +1,48 @@
+@use "../style-core/core/mixins" as *;
+@use "../style-core/core/functions" as *;
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-block: 3rem;
+  h1 {
+    font-family: system-ui;
+    font-size: 8rem;
+    line-height: 1;
+    @include max(sm) {
+      font-size: 6rem;
+    }
+    .zero {
+      &::before {
+        width: 0.5em;
+        height: 0.5em;
+        display: inline-block;
+        content: "";
+        border: 0.1em solid var(--t4-accent);
+        border-radius: 1em;
+        outline: 0.125em solid var(--t4-accent);
+        outline-offset: 0.125em;
+        animation-name: beat;
+        animation-duration: 0.7s;
+        animation-direction: alternate-reverse;
+        animation-iteration-count: infinite;
+        opacity: 0.5;
+      }
+      @keyframes beat {
+        0% {
+          outline-width: 0.125em;
+          outline-offset: 0;
+        }
+        100% {
+          outline-width: 0;
+          outline-offset: 0.125em;
+        }
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+}

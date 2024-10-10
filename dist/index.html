@@ -9,21 +9,21 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/favicon/apple-touch-icon.png"
+      href="./favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/favicon/favicon-32x32.png"
+      href="./favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/favicon/favicon-16x16.png"
+      href="./favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
     <link
       rel="mask-icon"
       href="/favicon/safari-pinned-tab.svg"
@@ -33,16 +33,9 @@
     <meta name="theme-color" content="#ffffff" />
     <!-- End Favicon -->
 
-    <!-- Start Script -->
-    <script src="/assets/js/alpine-mask.min.js" defer></script>
-    <script src="/assets/js/alpine.min.js" defer></script>
-    <script src="/assets/js/micromodal.min.js" defer></script>
-    <script src="/assets/js/splide.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
-    <!-- End Script -->
-
-    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
-    <link rel="stylesheet" crossorigin href="/assets/css/general.css">
+    <script type="module" crossorigin src="./assets/js/general.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/css/general.css">
+    <link rel="stylesheet" crossorigin href="./assets/css/index-html.css">
   </head>
 
   <body>
@@ -51,7 +44,7 @@
         <div class="navbar container">
           <div class="navbar__logo">
             <a href="#" class="logo">
-              <img src="/assets/img/logo.png" height="44" alt="Farzad Fit" />
+              <img src="./assets/img/logo.png" height="44" alt="Farzad Fit" />
               <p>فرزاد <span class="-c-accent">فیت</span></p>
             </a>
           </div>
@@ -100,7 +93,10 @@
               ></iconify-icon>
               <span class="t4-btn__text">سوالات متداول</span>
             </button>
-            <button class="t4-btn -filled -accent">
+            <button
+              class="t4-btn -filled -accent"
+              data-t4-modal-open="login-register__modal"
+            >
               <span class="t4-btn__text">‌ورود / ثبت‌نام</span>
             </button>
             <!-- <div
@@ -196,7 +192,7 @@
           </div>
           <div class="hero__img-box">
             <div class="img">
-              <img src="/assets/img/hero-img.avif" alt="" draggable="false" />
+              <img src="./assets/img/hero-img.avif" alt="" draggable="false" />
               <span class="shape -small"></span>
               <span class="shape -large"></span>
             </div>
@@ -445,25 +441,6 @@
                 <span>برنامه ورزشی</span>
               </div>
             </div>
-            <script>
-              document.addEventListener("mousemove", function (e) {
-                const x = e.clientX;
-                const y = e.clientY;
-
-                document.querySelector(
-                  ".hero__img-box .-ts"
-                ).style.transform = `translate(${x * 0.01}px, ${y * 0.01}px)`;
-                document.querySelector(
-                  ".hero__img-box .-te"
-                ).style.transform = `translate(${x * 0.01}px, ${y * 0.01}px)`;
-                document.querySelector(
-                  ".hero__img-box .-be"
-                ).style.transform = `translate(${x * 0.01}px, ${y * 0.01}px)`;
-                document.querySelector(
-                  ".hero__img-box .-bs"
-                ).style.transform = `translate(${x * 0.01}px, ${y * 0.01}px)`;
-              });
-            </script>
           </div>
         </section>
         <section class="features container mt-24">
@@ -645,7 +622,7 @@
                 <li class="splide__slide">
                   <a href="#" class="categories__item">
                     <div class="img">
-                      <img src="assets/img/categories-img-1.avif" alt="" />
+                      <img src="./assets/img/categories-img-1.avif" alt="" />
                     </div>
                     <h3 class="title -fs-h-6">ثبت‌نام و تشکیل پرونده</h3>
                   </a>
@@ -653,7 +630,7 @@
                 <li class="splide__slide">
                   <a href="#" class="categories__item">
                     <div class="img">
-                      <img src="assets/img/categories-img-1.avif" alt="" />
+                      <img src="./assets/img/categories-img-1.avif" alt="" />
                     </div>
                     <h3 class="title -fs-h-6">ثبت‌نام و تشکیل پرونده</h3>
                   </a>
@@ -661,7 +638,7 @@
                 <li class="splide__slide">
                   <a href="#" class="categories__item">
                     <div class="img">
-                      <img src="assets/img/categories-img-1.avif" alt="" />
+                      <img src="./assets/img/categories-img-1.avif" alt="" />
                     </div>
                     <h3 class="title -fs-h-6">ثبت‌نام و تشکیل پرونده</h3>
                   </a>
@@ -669,7 +646,7 @@
                 <li class="splide__slide">
                   <a href="#" class="categories__item">
                     <div class="img">
-                      <img src="assets/img/categories-img-1.avif" alt="" />
+                      <img src="./assets/img/categories-img-1.avif" alt="" />
                     </div>
                     <h3 class="title -fs-h-6">ثبت‌نام و تشکیل پرونده</h3>
                   </a>
@@ -677,7 +654,7 @@
                 <li class="splide__slide">
                   <a href="#" class="categories__item">
                     <div class="img">
-                      <img src="assets/img/categories-img-1.avif" alt="" />
+                      <img src="./assets/img/categories-img-1.avif" alt="" />
                     </div>
                     <h3 class="title -fs-h-6">ثبت‌نام و تشکیل پرونده</h3>
                   </a>
@@ -685,35 +662,6 @@
               </ul>
             </div>
           </div>
-          <script id="categories__script">
-            document.addEventListener("DOMContentLoaded", () => {
-              let categoriesCarousel = new Splide(".categories .splide", {
-                perPage: 5,
-                perMove: 1,
-                gap: "1.5rem",
-                direction: document.dir == "rtl" ? "rtl" : "ltr",
-                arrows: false,
-                breakpoints: {
-                  992: {
-                    perPage: 4,
-                  },
-                  768: {
-                    perPage: 3,
-                  },
-                  576: {
-                    perPage: 2,
-                  },
-                },
-              });
-              categoriesCarousel.on("overflow", function (isOverflow) {
-                categoriesCarousel.options = {
-                  drag: isOverflow,
-                  pagination: isOverflow,
-                };
-              });
-              categoriesCarousel.mount();
-            });
-          </script>
         </section>
         <section class="why-us container mt-24">
           <div class="-align-center">
@@ -846,29 +794,19 @@
                 <div class="splide__track">
                   <ul class="splide__list">
                     <li class="splide__slide">
-                      <img src="/assets/img/testemonial-img-1.avif" alt="" />
+                      <img src="./assets/img/testemonial-img-1.avif" alt="" />
                     </li>
                     <li class="splide__slide">
-                      <img src="/assets/img/testemonial-img-2.avif" alt="" />
+                      <img src="./assets/img/testemonial-img-2.avif" alt="" />
                     </li>
                     <li class="splide__slide">
-                      <img src="/assets/img/testemonial-img-3.avif" alt="" />
+                      <img src="./assets/img/testemonial-img-3.avif" alt="" />
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-          <script id="testimonial__sript">
-            document.addEventListener("DOMContentLoaded", function () {
-              var splide = new Splide(".testimonial .splide", {
-                arrows: false,
-                direction: "rtl",
-                perPage: 1,
-              });
-              splide.mount();
-            });
-          </script>
         </section>
         <section
           class="product-carousel splide container mt-24"
@@ -926,7 +864,7 @@
                 <div class="card-product">
                   <div class="card-product__img-box">
                     <a href="#" class="img-link">
-                      <img src="/assets/img/product-img-01.webp" alt="" />
+                      <img src="./assets/img/product-img-01.webp" alt="" />
                     </a>
                   </div>
                   <div class="card-product__cnt-box">
@@ -961,7 +899,7 @@
                 <div class="card-product">
                   <div class="card-product__img-box">
                     <a href="#" class="img-link">
-                      <img src="/assets/img/product-img-02.webp" alt="" />
+                      <img src="./assets/img/product-img-02.webp" alt="" />
                     </a>
                   </div>
                   <div class="card-product__cnt-box">
@@ -996,7 +934,7 @@
                 <div class="card-product">
                   <div class="card-product__img-box">
                     <a href="#" class="img-link">
-                      <img src="/assets/img/product-img-03.webp" alt="" />
+                      <img src="./assets/img/product-img-03.webp" alt="" />
                     </a>
                   </div>
                   <div class="card-product__cnt-box">
@@ -1031,7 +969,7 @@
                 <div class="card-product">
                   <div class="card-product__img-box">
                     <a href="#" class="img-link">
-                      <img src="/assets/img/product-img-04.webp" alt="" />
+                      <img src="./assets/img/product-img-04.webp" alt="" />
                     </a>
                   </div>
                   <div class="card-product__cnt-box">
@@ -1066,7 +1004,7 @@
                 <div class="card-product">
                   <div class="card-product__img-box">
                     <a href="#" class="img-link">
-                      <img src="/assets/img/product-img-05.webp" alt="" />
+                      <img src="./assets/img/product-img-05.webp" alt="" />
                     </a>
                   </div>
                   <div class="card-product__cnt-box">
@@ -1101,7 +1039,7 @@
                 <div class="card-product">
                   <div class="card-product__img-box">
                     <a href="#" class="img-link">
-                      <img src="/assets/img/product-img-06.webp" alt="" />
+                      <img src="./assets/img/product-img-06.webp" alt="" />
                     </a>
                   </div>
                   <div class="card-product__cnt-box">
@@ -1134,35 +1072,6 @@
               </div>
             </div>
           </div>
-          <script id="product-carousel__script">
-            document.addEventListener("DOMContentLoaded", () => {
-              let productCarousel = new Splide(".product-carousel", {
-                perPage: 4,
-                perMove: 1,
-                gap: "1.5rem",
-                direction: document.dir == "rtl" ? "rtl" : "ltr",
-                breakpoints: {
-                  992: {
-                    perPage: 3,
-                  },
-                  768: {
-                    perPage: 2,
-                  },
-                  576: {
-                    perPage: 1,
-                  },
-                },
-              });
-              productCarousel.on("overflow", function (isOverflow) {
-                productCarousel.options = {
-                  drag: isOverflow,
-                  pagination: isOverflow,
-                  arrows: isOverflow,
-                };
-              });
-              productCarousel.mount();
-            });
-          </script>
         </section>
         <section class="pricing container mt-24">
           <div class="-align-center">
@@ -1368,7 +1277,7 @@
                 <div class="card-blog">
                   <div class="card-blog__img-box">
                     <a href="#" class="img-link">
-                      <img src="/assets/img/pexels-823sl-2294363.webp" alt="" />
+                      <img src="./assets/img/pexels-823sl-2294363.webp" alt="" />
                     </a>
                   </div>
                   <div class="card-blog__cnt-box">
@@ -1394,7 +1303,7 @@
                   <div class="card-blog__img-box">
                     <a href="#" class="img-link">
                       <img
-                        src="/assets/img/pexels-cesar-galeao-1673528-3289711.webp"
+                        src="./assets/img/pexels-cesar-galeao-1673528-3289711.webp"
                         alt=""
                       />
                     </a>
@@ -1422,7 +1331,7 @@
                   <div class="card-blog__img-box">
                     <a href="#" class="img-link">
                       <img
-                        src="/assets/img/pexels-keiji-yoshiki-31563-176782.webp"
+                        src="./assets/img/pexels-keiji-yoshiki-31563-176782.webp"
                         alt=""
                       />
                     </a>
@@ -1450,7 +1359,7 @@
                   <div class="card-blog__img-box">
                     <a href="#" class="img-link">
                       <img
-                        src="/assets/img/pexels-mastercowley-1089164.webp"
+                        src="./assets/img/pexels-mastercowley-1089164.webp"
                         alt=""
                       />
                     </a>
@@ -1478,7 +1387,7 @@
                   <div class="card-blog__img-box">
                     <a href="#" class="img-link">
                       <img
-                        src="/assets/img/pexels-mastercowley-634030.webp"
+                        src="./assets/img/pexels-mastercowley-634030.webp"
                         alt=""
                       />
                     </a>
@@ -1506,7 +1415,7 @@
                   <div class="card-blog__img-box">
                     <a href="#" class="img-link">
                       <img
-                        src="/assets/img/pexels-pixabay-416717.webp"
+                        src="./assets/img/pexels-pixabay-416717.webp"
                         alt=""
                       />
                     </a>
@@ -1531,32 +1440,6 @@
               </div>
             </div>
           </div>
-          <script id="blog-carousel__script">
-            document.addEventListener("DOMContentLoaded", () => {
-              let blogCarousel = new Splide(".blog-carousel", {
-                perPage: 3,
-                perMove: 1,
-                gap: "1.5rem",
-                direction: document.dir == "rtl" ? "rtl" : "ltr",
-                breakpoints: {
-                  992: {
-                    perPage: 2,
-                  },
-                  576: {
-                    perPage: 1,
-                  },
-                },
-              });
-              blogCarousel.on("overflow", function (isOverflow) {
-                blogCarousel.options = {
-                  drag: isOverflow,
-                  pagination: isOverflow,
-                  arrows: isOverflow,
-                };
-              });
-              blogCarousel.mount();
-            });
-          </script>
         </section>
       </main>
       <footer class="site-footer">
@@ -1564,7 +1447,7 @@
           <div class="footer__top">
             <a href="#" class="logo">
               <img
-                src="/assets/img/logo-dark.webp"
+                src="./assets/img/logo-dark.webp"
                 height="44"
                 alt="Farzad Fit"
               />
@@ -1758,33 +1641,6 @@
           </ul>
         </main>
       </nav>
-      <script id="t4-mobile-nav__script">
-        let mobileNav = document.querySelector(".t4-mobile-nav");
-        let mobileNavCloseElems =
-          mobileNav.querySelectorAll("[close-mobile-nav]");
-        let mobileNavOpenElems = document.querySelectorAll("[open-mobile-nav]");
-        let mobileNavMenuhHasChildElems = mobileNav.querySelectorAll(
-          ".mobile-menu .-has-child"
-        );
-        mobileNavCloseElems.forEach((item) => {
-          item.addEventListener("click", () => {
-            mobileNav.classList.remove("-open");
-            document.body.classList.remove("-open-mobile-nav");
-          });
-        });
-        mobileNavOpenElems.forEach((item) => {
-          item.addEventListener("click", () => {
-            mobileNav.classList.toggle("-open");
-            document.body.classList.toggle("-open-mobile-nav");
-          });
-        });
-        mobileNavMenuhHasChildElems.forEach((item) => {
-          item.addEventListener("click", (e) => {
-            e.preventDefault();
-            item.classList.toggle("-open");
-          });
-        });
-      </script>
     </div>
     <div class="t4-mobile-menu">
       <nav class="navbar container">
@@ -1916,11 +1772,7 @@
       </nav>
     </div>
     <div class="t4-modal -slide" id="login-register__modal" aria-hidden="true">
-      <div
-        class="t4-modal__overlay login-register"
-        tabindex="-1"
-        data-t4-modal-close
-      >
+      <div class="t4-modal__overlay" tabindex="-1" data-t4-modal-close>
         <div class="t4-modal__content">
           <header class="t4-modal__header">
             <h2 class="modal__title">ورود / ثبت نام</h2>
@@ -1932,15 +1784,14 @@
               role="dialog"
               aria-modal="true"
               aria-labelledby=""
+              style="display: block"
             >
               <p class="step-desc">
                 جهت ورود لطفا شماره موبایل خود را وارد کنید.
               </p>
-              <p class="validation-text -error mt-8">
-                کد امنیتی صحیح نمی باشد.
-              </p>
+              <p class="validation-text -error">کد امنیتی صحیح نمی باشد.</p>
               <div
-                class="mt-24 phone-input"
+                class="field-input -phone"
                 x-data="{ phone: '' ,  rawPhone: ''}"
                 x-init="$watch('phone', value => rawPhone = value.replace(/\D/g, ''))"
               >
@@ -1954,7 +1805,11 @@
                 />
                 <input type="tel" hidden x-model="rawPhone" />
               </div>
-              <div class="mt-24 captcha-input">
+              <div
+                class="field-input -captcha"
+                x-data="{ captcha: '' ,  rawCaptcha: ''}"
+                x-init="$watch('captcha', value => rawCaptcha = value.replace(/\D/g, ''))"
+              >
                 <label for="login-captcha">کد امنیتی</label>
                 <div class="input-wrapper">
                   <input
@@ -1963,23 +1818,23 @@
                     inputmode="numeric"
                     placeholder="- - - -"
                     maxlength="4"
+                    x-model="captcha"
+                    x-mask:dynamic="'9999'"
                   />
+                  <input type="tel" hidden x-model="rawCaptcha" />
                   <img
                     src="https://tik4.com/wp-content/themes/tik4/captcha/captcha.php?rand=1693058073"
                     id="captcha-image"
                   />
                 </div>
               </div>
-              <p class="terms-conditions mt-24">
+              <p class="terms-conditions">
                 ثبت نام در تیک4 به معنی پذیرش
                 <a href="#" data-t4-modal-open="terms-conditions__modal"
                   >قوانین و مقررات</a
                 >
                 است.
               </p>
-              <button class="t4-btn -filled -wide mt-24" id="next-btn">
-                <span class="text">ادامه</span>
-              </button>
             </div>
             <div
               class="login-register__step -step-2"
@@ -1993,13 +1848,11 @@
                 <span id="phone-number-entered">09359251138</span> ارسال شد. کد
                 را در کادر زیر وارد کنید.
               </p>
-              <button class="change-phone mt-8" id="change-phone-number">
+              <button class="change-phone" id="change-phone-number">
                 تغییر شماره تلفن
               </button>
-              <p class="validation-text -error mt-8">
-                کد وارد شده صحیح نمی باشد
-              </p>
-              <div class="mt-24 otp-input">
+              <p class="validation-text -error">کد وارد شده صحیح نمی باشد</p>
+              <div class="otp-input">
                 <input
                   type="text"
                   maxlength="1"
@@ -2029,140 +1882,27 @@
                   inputmode="numeric"
                 />
                 <input type="hidden" id="otp-hidden" name="otp" />
-                <script id="otp__script">
-                  document.addEventListener("DOMContentLoaded", () => {
-                    const otpInputs = document.querySelectorAll(
-                      ".login-register .otp-input__item"
-                    );
-                    const otpHidden = document.querySelector(
-                      ".login-register #otp-hidden"
-                    );
-
-                    otpInputs.forEach((input, index) => {
-                      input.addEventListener("input", (event) => {
-                        let value = event.target.value;
-                        value = value.replace(/[^\d۰-۹]/g, ""); // حذف کاراکترهای غیر عددی
-
-                        if (value.length === 1) {
-                          input.value = toEnglishDigits(value);
-                          if (index < otpInputs.length - 1) {
-                            otpInputs[index + 1].focus();
-                          }
-                        } else {
-                          input.value = "";
-                        }
-
-                        updateHiddenInput();
-                      });
-
-                      input.addEventListener("keydown", (event) => {
-                        if (
-                          event.key === "Backspace" &&
-                          event.target.value === "" &&
-                          index > 0
-                        ) {
-                          otpInputs[index - 1].focus();
-                        }
-                      });
-
-                      input.addEventListener("paste", (event) => {
-                        event.preventDefault(); // جلوگیری از پیست کردن مقادیر
-                      });
-                    });
-
-                    function updateHiddenInput() {
-                      const otpValue = Array.from(otpInputs)
-                        .map((input) => input.value)
-                        .join("");
-                      otpHidden.value = otpValue;
-                    }
-
-                    function toEnglishDigits(str) {
-                      const persianDigits = [
-                        "۰",
-                        "۱",
-                        "۲",
-                        "۳",
-                        "۴",
-                        "۵",
-                        "۶",
-                        "۷",
-                        "۸",
-                        "۹",
-                      ];
-                      const englishDigits = [
-                        "0",
-                        "1",
-                        "2",
-                        "3",
-                        "4",
-                        "5",
-                        "6",
-                        "7",
-                        "8",
-                        "9",
-                      ];
-                      return str.replace(
-                        /[۰-۹]/g,
-                        (w) => englishDigits[persianDigits.indexOf(w)]
-                      );
-                    }
-                  });
-                </script>
               </div>
-              <div class="resend-code mt-24">
-                <span class="resend-code__countdown">
-                  <span class="minute">02</span>:<span class="secound">00</span>
-                </span>
-                تا پایان اعتبار کد ارسالی
+              <div class="resend-code">
+                <div style="display: block">
+                  <span class="resend-code__countdown">
+                    <span class="minute">02</span>:<span class="secound"
+                      >00</span
+                    >
+                  </span>
+                  تا پایان اعتبار کد ارسالی
+                </div>
+                <div style="display: none">
+                  <button class="resend-code__btn">ارسال مجدد</button>
+                </div>
               </div>
-              <script>
-                function startCountdown(
-                  endTime,
-                  minuteElem,
-                  secoundElem,
-                  endingCallback
-                ) {
-                  const second = 1000,
-                    minute = second * 60,
-                    hour = minute * 60;
-                  let countdownInterval = setInterval(() => {
-                    endTime = endTime - second;
-                    minuteElem.innerText = Math.floor(
-                      (endTime % hour) / minute
-                    ).toLocaleString(undefined, { minimumIntegerDigits: 2 });
-                    secoundElem.innerText = Math.floor(
-                      (endTime % minute) / second
-                    ).toLocaleString(undefined, { minimumIntegerDigits: 2 });
-                    if (endTime < 0) {
-                      clearInterval(countdownInterval);
-                      endingCallback();
-                    }
-                  }, second);
-                }
-                let resendCodeElem = document.querySelector(
-                  ".login-register .resend-code"
-                );
-                startCountdown(
-                  120000,
-                  resendCodeElem.querySelector(
-                    ".resend-code__countdown .minute"
-                  ),
-                  resendCodeElem.querySelector(
-                    ".resend-code__countdown .secound"
-                  ),
-                  () => {
-                    resendCodeElem.innerHTML = `
-                    کد فعال سازی را دریافت نکردید ؟ <button class="resend-code__btn">ارسال مجدد</button>
-                    `;
-                  }
-                );
-              </script>
-              <button class="t4-btn -filled -wide mt-24" id="submit-btn">
-                <span class="text">ادامه</span>
-              </button>
             </div>
           </main>
+          <footer class="t4-modal__main">
+            <button class="t4-btn -filled -wide -primary" id="next-btn">
+              <span class="text">ادامه</span>
+            </button>
+          </footer>
         </div>
       </div>
     </div>

@@ -2,50 +2,32 @@
 /*! purgecss start ignore */
 .login-register {
   text-align: center;
-  .iti {
-    --iti-arrow-padding: 16px;
-    &__tel-input {
-      padding-block: 8px;
-      --iti-input-padding: 16px;
-      width: 100%;
-      border: 1px solid var(--t4-outline-low);
-      border-radius: 4px;
-      outline: none;
-      direction: ltr;
-      &:focus {
-        border-color: var(--t4-primary);
-      }
-      &:not(:focus) {
-        &:hover {
-          border-color: var(--t4-outline-high);
-        }
-      }
-    }
+  .step-desc {
+    font-size: 0.875rem;
+    font-weight: 500;
   }
   .validation-text {
-    font-size: 14px;
-    display: none;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
     &.-error {
-      display: block;
       color: var(--t4-error);
     }
-  }
-  :where(.phone-input, .captcha-input) {
-    label {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 4px;
-      text-align: start;
+    &.-success {
+      color: var(--t4-success);
     }
   }
-  .phone-input {
-    // input[type="tel"] {
-    //   width: 100%;
-    // }
+  .field-input {
+    margin-top: 0.75rem;
+    label {
+      display: block;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+      text-align: start;
+    }
     input {
       padding-block: 8px;
       padding-inline: 16px;
-      text-align: center;
+
       width: 100%;
       border: 1px solid var(--t4-outline-low);
       border-radius: 4px;
@@ -59,41 +41,43 @@
         &:hover {
           border-color: var(--t4-outline-high);
         }
+      }
+    }
+    &.-phone {
+      input {
+        text-align: center;
+      }
+    }
+    &.-captcha {
+      .input-wrapper {
+        position: relative;
+      }
+      input {
+        padding-left: 120px;
+        padding-right: 16px;
+        direction: ltr;
+      }
+      img {
+        position: absolute;
+        left: 1px;
+        inset-block: 1px;
+        height: 40px;
+        border-radius: 4px 0px 0px 4px;
       }
     }
   }
-  .captcha-input {
-    .input-wrapper {
-      position: relative;
-    }
-    input {
-      padding-block: 8px;
-      padding-left: 120px;
-      padding-right: 16px;
-      width: 100%;
-      border: 1px solid var(--t4-outline-low);
-      border-radius: 4px;
-      outline: none;
-      direction: ltr;
-      letter-spacing: 4px;
-      &:focus {
-        border-color: var(--t4-primary);
-      }
-      &:not(:focus) {
-        &:hover {
-          border-color: var(--t4-outline-high);
-        }
-      }
-    }
-    img {
-      position: absolute;
-      left: 1px;
-      inset-block: 1px;
-      height: 40px;
-      border-radius: 4px 0px 0px 4px;
-    }
+  .terms-conditions {
+    font-size: 0.75rem;
+    margin-top: 1rem;
+  }
+  .change-phone {
+    background-color: transparent;
+    font-size: 0.75rem;
+    color: currentColor;
+    margin-top: 0.5rem;
   }
   .otp-input {
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -121,15 +105,17 @@
       }
     }
   }
-  .change-phone {
-    background-color: transparent;
-  }
+
   .resend-code {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
     &__countdown {
       font-feature-settings: "ss03";
     }
     &__btn {
       background-color: transparent;
+      text-decoration: underline;
     }
   }
 }

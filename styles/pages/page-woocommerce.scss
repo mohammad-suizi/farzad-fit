@@ -1,0 +1,463 @@
+@use "../style-core/core/mixins" as *;
+@use "../style-core/core/functions" as *;
+/*! purgecss start ignore */
+.woocommerce,
+.woocommerce-page {
+  img {
+    height: revert-layer;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+body.woocommerce-account {
+  .woocommerce {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    &::before,
+    &::after {
+      content: none;
+    }
+    &-MyAccount {
+      &-navigation {
+        box-shadow: 0 0.25rem 1rem 0 rgba(0, 0, 0, 0.1);
+        width: 100%;
+        border-radius: 1rem;
+        position: relative;
+        @include max(lg) {
+          padding: 1rem;
+        }
+        @include min(lg) {
+          padding-inline: 1.5rem;
+          overflow: hidden;
+        }
+        > ul {
+          display: flex;
+          flex-direction: column;
+          column-gap: 1.5rem;
+          @include max(lg) {
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            inset-inline: 0;
+            padding: 1rem;
+            border-radius: 1rem;
+            margin-top: 1rem;
+            background-color: var(--site-bg);
+            box-shadow: var(--t4-box-shadow-1);
+            display: none;
+            &.-open {
+              display: flex;
+            }
+          }
+          @include min(lg) {
+            flex-direction: row;
+          }
+        }
+        &-toggle {
+          background-color: transparent;
+          padding: 0.5rem;
+          font-size: 1rem;
+          @include min(lg) {
+            display: none;
+          }
+        }
+        &-link {
+          position: relative;
+
+          @include min(lg) {
+            &::after {
+              content: "";
+              border-bottom: 2px solid var(--t4-primary);
+              position: absolute;
+              top: 100%;
+              inset-inline: 0;
+              transition: translate 0.1s;
+            }
+          }
+          a {
+            display: inline-flex;
+            align-items: center;
+            column-gap: 1ch;
+            padding: 0.5rem;
+            white-space: nowrap;
+            @include min(lg) {
+              padding-block: 1.5rem;
+            }
+            &::before {
+              flex-shrink: 0;
+            }
+          }
+          &--dashboard {
+            a {
+              &::before {
+                @include iconify(
+                  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.75' d='M2 6c0-1.886 0-2.828.586-3.414S4.114 2 6 2s2.828 0 3.414.586S10 4.114 10 6v2c0 1.886 0 2.828-.586 3.414S7.886 12 6 12s-2.828 0-3.414-.586S2 9.886 2 8zm0 13c0-.932 0-1.398.152-1.765a2 2 0 0 1 1.083-1.083C3.602 16 4.068 16 5 16h2c.932 0 1.398 0 1.765.152a2 2 0 0 1 1.083 1.083C10 17.602 10 18.068 10 19s0 1.398-.152 1.765a2 2 0 0 1-1.083 1.083C8.398 22 7.932 22 7 22H5c-.932 0-1.398 0-1.765-.152a2 2 0 0 1-1.083-1.083C2 20.398 2 19.932 2 19m12-3c0-1.886 0-2.828.586-3.414S16.114 12 18 12s2.828 0 3.414.586S22 14.114 22 16v2c0 1.886 0 2.828-.586 3.414S19.886 22 18 22s-2.828 0-3.414-.586S14 19.886 14 18zm0-11c0-.932 0-1.398.152-1.765a2 2 0 0 1 1.083-1.083C15.602 2 16.068 2 17 2h2c.932 0 1.398 0 1.765.152a2 2 0 0 1 1.083 1.083C22 3.602 22 4.068 22 5s0 1.398-.152 1.765a2 2 0 0 1-1.083 1.083C20.398 8 19.932 8 19 8h-2c-.932 0-1.398 0-1.765-.152a2 2 0 0 1-1.083-1.083C14 6.398 14 5.932 14 5' color='%23000'/%3E%3C/svg%3E")
+                );
+              }
+            }
+          }
+          &--orders {
+            a {
+              &::before {
+                @include iconify(
+                  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.75' d='M3 11c0-3.75 0-5.625.955-6.939A5 5 0 0 1 5.06 2.955C6.375 2 8.251 2 12 2s5.625 0 6.939.955a5 5 0 0 1 1.106 1.106C21 5.375 21 7.251 21 11v2c0 3.75 0 5.625-.955 6.939a5 5 0 0 1-1.106 1.106C17.625 22 15.749 22 12 22s-5.625 0-6.939-.955a5 5 0 0 1-1.106-1.106C3 18.625 3 16.749 3 13zm13-1.5H8m5.5 5h-3' color='%23000'/%3E%3C/svg%3E")
+                );
+              }
+            }
+          }
+          &--downloads {
+            a {
+              &::before {
+                @include iconify(
+                  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.75' color='%23000'%3E%3Cpath d='M18.25 9c2.058.074 3.805 1.617 3.749 3.684c-.013.481-.2 1.076-.572 2.265c-.897 2.861-2.404 5.345-5.78 5.941c-.622.11-1.32.11-2.717.11h-1.86c-1.397 0-2.095 0-2.716-.11c-3.377-.596-4.884-3.08-5.78-5.941c-.373-1.19-.56-1.784-.573-2.265C1.945 10.617 3.692 9.074 5.75 9'/%3E%3Cpath d='M12 14V3m0 11c-.7 0-2.008-1.994-2.5-2.5M12 14c.7 0 2.008-1.994 2.5-2.5'/%3E%3C/g%3E%3C/svg%3E")
+                );
+              }
+            }
+          }
+          &--edit-address {
+            a {
+              &::before {
+                @include iconify(
+                  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.75' color='%23000'%3E%3Cpath d='M13.242 17.5q-.071.453-.126.744c-.229 1.222-1.96 1.957-2.888 2.612c-.552.39-1.222-.074-1.293-.678a196 196 0 0 1-.674-6.917a1.05 1.05 0 0 0-.402-.755C5.371 10.646 3.598 8.6 2.63 7.45c-.3-.356-.398-.617-.457-1.076C1.97 4.8 1.87 4.015 2.33 3.507C2.79 3 3.606 3 5.236 3h11.532c1.63 0 2.445 0 2.906.507c.224.246.315.558.327.993'/%3E%3Cpath d='m20.862 7.44l.695.692a1.497 1.497 0 0 1 0 2.12l-3.638 3.697a2 2 0 0 1-1.05.551l-2.254.488a.5.5 0 0 1-.597-.593l.48-2.235c.074-.397.267-.762.554-1.047l3.683-3.674a1.507 1.507 0 0 1 2.127 0'/%3E%3C/g%3E%3C/svg%3E")
+                );
+              }
+            }
+          }
+          &--edit-account {
+            a {
+              &::before {
+                @include iconify(
+                  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.75' d='M5.18 15.296c-1.258.738-4.555 2.243-2.547 4.126c.982.92 2.074 1.578 3.448 1.578h7.838c1.374 0 2.467-.658 3.447-1.578c2.009-1.883-1.288-3.389-2.546-4.126a9.61 9.61 0 0 0-9.64 0M14 7a4 4 0 1 1-8 0a4 4 0 0 1 8 0m5.622-2.434c.224-.243.335-.364.454-.434a.93.93 0 0 1 .931-.014c.12.067.236.184.466.42c.23.235.346.353.412.476a.99.99 0 0 1-.014.951c-.07.122-.188.236-.425.464l-2.82 2.717c-.45.433-.675.65-.956.76s-.589.1-1.206.085l-.084-.003c-.188-.005-.282-.007-.337-.069c-.054-.062-.047-.158-.032-.35l.008-.103c.042-.539.063-.808.168-1.05c.105-.243.287-.44.65-.833z' color='%23000'/%3E%3C/svg%3E")
+                );
+              }
+            }
+          }
+          &--get-plan {
+            a {
+              &::before {
+                @include iconify(
+                  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M17.28 8.72a.75.75 0 0 1 0 1.06l-2 2a.75.75 0 0 1-1.06 0l-1-1a.75.75 0 1 1 1.06-1.06l.47.47l1.47-1.47a.75.75 0 0 1 1.06 0m0 6.56a.75.75 0 1 0-1.06-1.06l-1.47 1.47l-.47-.47a.75.75 0 1 0-1.06 1.06l1 1a.75.75 0 0 0 1.06 0zM7 10.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 0 1.5h-3.5a.75.75 0 0 1-.75-.75M7.75 15a.75.75 0 0 0 0 1.5h3.5a.75.75 0 0 0 0-1.5zm8.236-11a2.25 2.25 0 0 0-2.236-2h-3.5a2.25 2.25 0 0 0-2.236 2H6.25A2.25 2.25 0 0 0 4 6.25v13.5A2.25 2.25 0 0 0 6.25 22h11.5A2.25 2.25 0 0 0 20 19.75V6.25A2.25 2.25 0 0 0 17.75 4zM10.25 6.5h3.5c.78 0 1.467-.397 1.871-1h2.129a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H6.25a.75.75 0 0 1-.75-.75V6.25a.75.75 0 0 1 .75-.75h2.129c.404.603 1.091 1 1.871 1m0-3h3.5a.75.75 0 0 1 0 1.5h-3.5a.75.75 0 0 1 0-1.5'/%3E%3C/svg%3E")
+                );
+              }
+            }
+          }
+          &--customer-logout {
+            @include min(lg) {
+              margin-inline-start: auto;
+            }
+            a {
+              &::before {
+                @include iconify(
+                  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.75' d='M7.023 5.5a9 9 0 1 0 9.953 0M12 2v8' color='%23000'/%3E%3C/svg%3E")
+                );
+              }
+            }
+          }
+          &:is(.is-active, :hover) {
+            &:after {
+              translate: 0 -100%;
+            }
+          }
+        }
+      }
+      &-content {
+        width: 100%;
+      }
+    }
+    table.my_account_orders {
+      .button {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+        &:not(:last-of-type) {
+          margin-inline-end: 1ch;
+        }
+        &.pay {
+          background-color: var(--t4-success);
+          color: var(--t4-on-success);
+        }
+        &.cancel {
+          background-color: var(--t4-error);
+          color: var(--t4-on-error);
+        }
+      }
+    }
+  }
+}
+
+body.woocommerce-cart {
+  .woocommerce {
+    &-cart-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      @include min(lg) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+      }
+    }
+    .cart-collaterals {
+      .cart_totals {
+        width: 100%;
+      }
+      tr th {
+        border-top-color: var(--t4-outline-low);
+      }
+    }
+  }
+}
+
+body.woocommerce-checkout {
+  .customer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    @include min(lg) {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 480px;
+    }
+    &__aside {
+      > div {
+        position: sticky;
+        top: calc(var(--stiky-height) + 2rem);
+      }
+    }
+  }
+}
+
+body.woocommerce-page {
+  .woocommerce {
+    :is(input, button, a) {
+      &.button {
+        @include fvs(500);
+        font-size: 0.875rem;
+        background-color: var(--t4-primary);
+        color: var(--t4-on-primary);
+        padding: 0.75rem 1rem;
+        display: inline-flex;
+        justify-content: center;
+        transition-duration: 0.1s;
+        transition-property: color, background-color;
+        &.checkout-button {
+          width: 100%;
+          background-color: var(--t4-success);
+          color: var(--t4-on-success);
+        }
+        &:not(:disabled) {
+          &:hover {
+            background-color: var(--t4-accent);
+            color: var(--t4-on-accent);
+          }
+        }
+        &:is(:disabled, [disabled]) {
+          background-color: var(--t4-surface);
+          color: var(--t4-on-surface);
+          opacity: 0.7;
+          cursor: not-allowed;
+          padding: 0.75rem 1rem;
+          &:hover {
+            background-color: var(--t4-surface-high);
+          }
+        }
+      }
+    }
+    :is(.input-text) {
+      padding: 0.5rem 1rem;
+      background-color: transparent;
+      border: 1px solid var(--t4-outline-low);
+      border-radius: 0.5rem;
+      transition-duration: 0.1s;
+      transition-property: border-color, outline-offset, outline-width;
+      outline-width: 0;
+      &:not(:disabled) {
+        &:hover {
+          border-color: var(--t4-outline);
+        }
+        &:focus {
+          outline: 2px solid var(--t4-accent);
+          outline-offset: 1px;
+          border-color: var(--t4-accent);
+        }
+      }
+      &::placeholder {
+        font-size: 0.875rem;
+      }
+    }
+    table {
+      border-collapse: collapse;
+      border-radius: 0;
+    }
+    table.cart {
+      td.actions {
+        .input-text {
+          border: 1px solid var(--t4-outline-low);
+          border-radius: 0.25rem;
+          &::placeholder {
+            font-size: 0.875rem;
+          }
+          &:focus {
+            border-color: var(--t4-accent);
+          }
+          @include min(md) {
+            width: 120px;
+          }
+        }
+      }
+    }
+    table.shop_table {
+      border-color: var(--t4-outline-low);
+      :is(th, td) {
+        border-color: var(--t4-outline-low);
+        text-align: center;
+        padding: 0.5rem;
+      }
+    }
+    .woocommerce-Price {
+      &-amount {
+        display: inline-flex;
+        gap: 1ch;
+        [dir="rtl"] & {
+          flex-direction: row-reverse;
+        }
+        bdi {
+          display: inline-flex;
+          gap: 1ch;
+          [dir="rtl"] & {
+            flex-direction: row-reverse;
+          }
+        }
+      }
+      &-currencySymbol {
+        font-size: 0.75em;
+        opacity: 70%;
+      }
+    }
+    .form-row {
+      padding: 0;
+      margin: 0;
+      &:not(:last-of-type) {
+        margin-bottom: 1rem;
+      }
+      label {
+        font-size: 0.875rem;
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+      > span:not([class]) {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        display: block;
+        margin-top: 1ch;
+        &::before {
+          content: "";
+          width: 1rem;
+          display: inline-block;
+          border-top: 0.25rem solid var(--t4-accent);
+          margin-inline-end: 1ch;
+        }
+      }
+    }
+    .woocommerce-customer-details address {
+      border-color: var(--t4-outline-low);
+    }
+    .edit-account {
+      fieldset {
+        padding: 1rem;
+        border: 1px dashed var(--t4-outline-low);
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        legend {
+          padding-inline: 1ch;
+          margin-inline-start: -0.5rem;
+        }
+      }
+    }
+  }
+  .woocommerce-error,
+  .woocommerce-info,
+  .woocommerce-message {
+    padding-block: 0.5rem;
+    padding-inline: 1rem 0.5rem;
+    border: 2px solid var(--t4-outline-low);
+    background-color: var(--t4-surface);
+    color: var(--t4-on-surface);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    .button {
+      float: none;
+      margin-inline-start: auto;
+    }
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+  .woocommerce-error {
+    border-color: var(--t4-error-low);
+    background-color: color-transparent(var(--t4-error-low), 30%);
+    color: var(--t4-on-error);
+  }
+  .woocommerce-info {
+    border-color: var(--t4-warning-low);
+    background-color: color-transparent(var(--t4-warning-low), 30%);
+  }
+  #payment {
+    background-color: var(--t4-surface);
+    div.payment_box {
+      background-color: var(--t4-surface-high);
+      color: var(--t4-on-surface);
+      &::before {
+        border-bottom-color: var(--t4-surface-high);
+      }
+    }
+    #place_order {
+      margin-bottom: 0;
+    }
+  }
+  .select2-container {
+    .select2 {
+      &-selection {
+        height: fit-content;
+        background-color: transparent;
+        border-color: var(--t4-outline-low);
+        border-radius: 0.5rem;
+        .select2-selection__rendered {
+          color: var(--t4-on-surface);
+          padding: 0.5rem 1rem;
+        }
+        .select2-selection__arrow {
+          width: 2.5rem;
+          height: 2.75rem;
+        }
+      }
+      &-dropdown {
+        background-color: var(--t4-surface);
+        color: var(--t4-on-surface);
+        border-color: var(--t4-outline-low);
+      }
+      &-results {
+        &__option {
+          &:hover {
+            background-color: var(--t4-surface-high);
+            color: var(--t4-on-surface);
+          }
+          &:is([data-selected="true"]) {
+            background-color: var(--t4-accent);
+            color: var(--t4-on-accent);
+          }
+        }
+      }
+    }
+  }
+  .blockOverlay {
+    background-color: color-transparent(var(--t4-outline), 10%) !important;
+    opacity: 100 !important;
+    backdrop-filter: blur(1.25px);
+  }
+}
+/*! purgecss end ignore */

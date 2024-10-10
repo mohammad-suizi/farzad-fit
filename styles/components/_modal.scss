@@ -10,12 +10,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include dark-mode {
-      background-color: rgba(#fff, 0.1);
-    }
   }
   &__content {
-    background-color: var(--t4-surface-low);
+    background-color: var(--body-bg, #fff);
     display: flex;
     flex-direction: column;
     width: clamp(0px, calc(100% - 32px), 480px);
@@ -74,7 +71,7 @@
   }
   .modal {
     &__title {
-      font-size: 1.25em;
+      font-size: 1.125em;
     }
     &__close {
       background-color: transparent;
@@ -88,8 +85,7 @@
       mask-image: var(--svg);
       mask-repeat: no-repeat;
       mask-size: 100% 100%;
-      &:hover {
-      }
+      opacity: 0.3;
     }
   }
   &.-slide {
@@ -108,20 +104,20 @@
     &[aria-hidden="false"] {
       .t4-modal {
         &__overlay {
-          animation: t4-modal__fadeIn 0.2s;
+          animation: t4-modal__fadeIn 0.3s;
         }
         &__content {
-          animation: t4-modal__slideIn 0.2s;
+          animation: t4-modal__slideIn 0.3s;
         }
       }
     }
     &[aria-hidden="true"] {
       .t4-modal {
         &__overlay {
-          animation: t4-modal__fadeOut 0.2s;
+          animation: t4-modal__fadeOut 0.3s;
         }
         &__content {
-          animation: t4-modal__slideOut 0.2;
+          animation: t4-modal__slideOut 0.3s;
         }
       }
     }
@@ -132,14 +128,14 @@
         &[aria-hidden="false"] {
           .t4-modal {
             &__content {
-              animation: t4-modal__slideInBS 0.2s;
+              animation: t4-modal__slideInBS 0.3s;
             }
           }
         }
         &[aria-hidden="true"] {
           .t4-modal {
             &__content {
-              animation: t4-modal__slideOutBS 0.2s;
+              animation: t4-modal__slideOutBS 0.3s;
             }
           }
         }

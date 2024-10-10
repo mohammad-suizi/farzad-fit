@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Farzad Fit • Page</title>
+    <title>Farzad Fit • Get Plan</title>
 
     <!-- Start Favicon -->
     <link
@@ -35,7 +35,7 @@
 
     <script type="module" src="/script/general.js"></script>
     <link rel="stylesheet" href="/styles/general.scss" />
-    <link rel="stylesheet" href="/styles/pages/page.scss" />
+    <link rel="stylesheet" href="/styles/pages/page-plan.scss" />
   </head>
 
   <body>
@@ -159,7 +159,285 @@
           </div>
         </div>
       </header>
-      <main class="site-main"></main>
+      <main class="site-main">
+        <div class="container mt-24">
+          <div>
+            <form action="" class="plan-form" id="plan-form">
+              <div class="plan-form__progress">
+                <div class="item -completed">
+                  <div class="item__icon">
+                    <div class="number">1</div>
+                  </div>
+                  <div class="item__title">انتخاب برنامه غذایی</div>
+                </div>
+                <div class="divider"></div>
+                <div class="item -current">
+                  <div class="item__icon">
+                    <div class="number">2</div>
+                  </div>
+                  <div class="item__title">انتخاب برنامه تمرینی</div>
+                </div>
+                <div class="divider"></div>
+                <div class="item">
+                  <div class="item__icon">
+                    <div class="number">3</div>
+                  </div>
+                  <div class="item__title">برنامه های اضافه</div>
+                </div>
+                <div class="divider"></div>
+                <div class="item">
+                  <div class="item__icon">
+                    <div class="number">4</div>
+                  </div>
+                  <div class="item__title">تشکیل پرونده</div>
+                </div>
+                <div class="divider"></div>
+                <div class="item">
+                  <div class="item__icon">
+                    <div class="number">5</div>
+                  </div>
+                  <div class="item__title">پرداخت</div>
+                </div>
+                <div class="divider"></div>
+                <div class="item">
+                  <div class="item__icon">
+                    <div class="number">
+                      <iconify-icon
+                        icon="mdi:check"
+                        style="width: 1em; height: 1em"
+                      ></iconify-icon>
+                    </div>
+                  </div>
+                  <div class="item__title">دریافت برنامه</div>
+                </div>
+              </div>
+              <div class="plan-form__content">
+                <div class="page -show">
+                  <h2 class="page__title">
+                    برنامه تغذیه مد نظر خود را انتخاب نمایید:
+                  </h2>
+                  <div class="page__content">
+                    <div class="plan-wrapper" id="meal-plan-wrapper">
+                      <label class="plan">
+                        <div class="title-wrapper">
+                          <h3 class="plan__title">رژیم افزایش وزن</h3>
+                          <p class="plan__period">1 ماهه</p>
+                        </div>
+                        <p class="plan__desc">رژیم افزایش وزن</p>
+                        <div class="plan__price">
+                          <del>1,000,000</del>
+                          <ins>2,000,000</ins>
+                          <span class="unit">تومان</span>
+                        </div>
+                        <input type="radio" name="meal-plan" value="1" hidden />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="page">
+                  <h2 class="page__title">
+                    برنامه تمرینی مد نظر خود را انتخاب نمایید:
+                  </h2>
+                  <div class="page__content">
+                    <div class="plan-wrapper" id="exercise-plan-wrapper"></div>
+                  </div>
+                </div>
+                <div class="page">
+                  <h2 class="page__title">سایر برنامه ها را انتخاب نمایید:</h2>
+                  <div class="page__content">
+                    <div class="plan-wrapper" id="add-on-plan-wrapper"></div>
+                  </div>
+                </div>
+                <div class="page">
+                  <h2 class="page__title">عنوان مرحله 4</h2>
+                  <div class="page__content"></div>
+                </div>
+                <div class="page">
+                  <h2 class="page__title">عنوان مرحله 5</h2>
+                  <div class="page__content"></div>
+                </div>
+                <div class="page">
+                  <h2 class="page__title">عنوان مرحله 6</h2>
+                  <div class="page__content"></div>
+                </div>
+              </div>
+              <!-- <div class="plan-form__summary">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>عنوان</th>
+                      <th>مدت زمان</th>
+                      <th>مبلغ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        برنامه اصلاحی
+                        <span>(375,000 تومان تخفیف)</span>
+                      </td>
+                      <td>شش ماهه</td>
+                      <td>1,125,000 تومان</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        برنامه مکمل
+                        <span>(375,000 تومان تخفیف)</span>
+                      </td>
+                      <td>شش ماهه</td>
+                      <td>1,125,000 تومان</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        رژیم افزایش وزن
+                        <span>(600,000 تومان تخفیف)</span>
+                      </td>
+                      <td>شش ماهه</td>
+                      <td>1,800,000 تومان</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        تمرین چربی سوزی
+                        <span>(750,000 تومان تخفیف)</span>
+                      </td>
+                      <td>شش ماهه</td>
+                      <td>2,250,000 تومان</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="2">مجموع:</td>
+                      <td>6,300,000 تومان</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">تخفیف خرید گروهی:</td>
+                      <td>1,260,000 - تومان</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">قابل پرداخت:</td>
+                      <td>5,040,000 تومان</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div> -->
+              <div class="plan-form__footer">
+                <div>
+                  <button
+                    type="button"
+                    class="t4-btn -outlined -accent"
+                    id="prev-btn"
+                  >
+                    <span class="t4-btn__text">بازگشت</span>
+                  </button>
+                </div>
+                <div>
+                  <button
+                    type="button"
+                    class="t4-btn -filled -accent"
+                    id="next-btn"
+                  >
+                    <span class="t4-btn__text">بعدی</span>
+                  </button>
+                </div>
+              </div>
+              <script id="plan-form__script" type="module">
+                const planForm = document.querySelector("#plan-form");
+                const planFromProgressItems = planForm.querySelectorAll(
+                  ".plan-form__progress .item"
+                );
+                const planFromPages = planForm.querySelectorAll(
+                  ".plan-form__content .page"
+                );
+                const planFormNextBtn = planForm.querySelector("#next-btn");
+                const planFormPrevBtn = planForm.querySelector("#prev-btn");
+                let currentStep = 0;
+
+                function showStep(index) {
+                  planFromProgressItems.forEach((item, i) => {
+                    if (i == index) {
+                      item.classList.add("-current");
+                      item.scrollIntoView(false, {
+                        behavior: "smooth",
+                        inline: "end",
+                      });
+                    } else {
+                      item.classList.remove("-current");
+                    }
+                    if (i < index) {
+                      item.classList.add("-completed");
+                    } else {
+                      item.classList.remove("-completed");
+                    }
+                  });
+                  planFromPages.forEach((step, i) => {
+                    if (i === index) {
+                      step.classList.add("-show");
+                    } else {
+                      step.classList.remove("-show");
+                    }
+                    if (index == 0) {
+                      planFormPrevBtn.classList.add("hidden");
+                    } else {
+                      planFormPrevBtn.classList.remove("hidden");
+                    }
+                    if (index == planFromPages.length - 2) {
+                      planFormNextBtn.querySelector(
+                        ".t4-btn__text"
+                      ).textContent = "ثبت";
+                    } else {
+                      planFormNextBtn.querySelector(
+                        ".t4-btn__text"
+                      ).textContent = "ادامه";
+                    }
+                  });
+                }
+
+                function validateStep(index) {
+                  const currentFields =
+                    planFromPages[index].querySelectorAll(".field");
+                  let valid = true;
+
+                  currentFields.forEach((field) => {
+                    const input = field.querySelector(".field__input");
+                    const errorText = field.querySelector(".field__text");
+                  });
+                  return valid;
+                }
+
+                function stepNavigation() {
+                  if (currentStep < planFromPages.length - 1) {
+                    if (validateStep(currentStep)) {
+                      currentStep++;
+                      if (currentStep !== planFromPages.length - 1) {
+                        showStep(currentStep);
+                      } else {
+                        planFormNextBtn.classList.add("-loading");
+                        planFormNextBtn.disabled = true;
+                      }
+                    } else {
+                      planFromPagesWarpper.scrollTo(0, 0);
+                    }
+                  }
+                }
+
+                planFormNextBtn.addEventListener("click", () => {
+                  stepNavigation();
+                });
+
+                planFormPrevBtn.addEventListener("click", () => {
+                  if (currentStep > 0) {
+                    currentStep--;
+                    showStep(currentStep);
+                  }
+                });
+
+                showStep(currentStep);
+              </script>
+            </form>
+            <div></div>
+          </div>
+        </div>
+      </main>
       <footer class="site-footer">
         <div class="site-footer__main container footer">
           <div class="footer__top">
