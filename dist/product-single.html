@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farzad Fit • Product Archive</title>
+
+    <!-- Start Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- End Favicon -->
+
+    <script type="module" crossorigin src="./assets/js/general.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/css/general.css">
+  </head>
+
+  <body class="site-body">
+    <header class="site-header">
+      <div class="navbar container">
+        <div class="navbar__logo">
+          <a href="#" class="logo">
+            <img src="./assets/img/logo.png" height="44" alt="Farzad Fit" />
+            <p>فرزاد <span class="-c-accent">فیت</span></p>
+          </a>
+        </div>
+        <div class="navbar__menu">
+          <ul class="main-menu">
+            <li class="-current">
+              <a href="#">صفحه اصلی</a>
+            </li>
+            <li>
+              <a href="#">درباره فرزاد فیت</a>
+            </li>
+            <li class="-has-child">
+              <a href="#">خدمات</a>
+              <ul>
+                <li>
+                  <a href="#">خدمات اول</a>
+                </li>
+                <li>
+                  <a href="#">خدمات دوم</a>
+                </li>
+                <li>
+                  <a href="#">خدمات سوم</a>
+                </li>
+                <li>
+                  <a href="#">خدمات چهارم</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">تعرفه‌ها</a>
+            </li>
+            <li>
+              <a href="#">وبلاگ</a>
+            </li>
+            <li>
+              <a href="#">تماس با ما</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar__actions">
+          <button class="t4-btn faq-btn">
+            <iconify-icon
+              icon="hugeicons:message-question"
+              width="1.2em"
+              height="1.2em"
+            ></iconify-icon>
+            <span class="t4-btn__text">سوالات متداول</span>
+          </button>
+          <button class="t4-btn -filled -accent">
+            <span class="t4-btn__text">‌ورود / ثبت‌نام</span>
+          </button>
+          <!-- <div
+            x-data="{ open: false }"
+            @click.away="if (open) open = false"
+            class="user-menu"
+          >
+            <button
+              @click="open = !open"
+              class="t4-btn -filled -accent user-menu__btn"
+            >
+              <iconify-icon
+                icon="hugeicons:user-circle-02"
+                width="1.2em"
+                height="1.2em"
+              ></iconify-icon>
+              <span class="t4-btn__text">حساب کاربری</span>
+            </button>
+            <div x-show="open" x-transition class="user-menu__content">
+              <a href="#" class="user">
+                <div class="user__img">
+                  <img src="/assets/img/user-img.jpg" alt="" />
+                </div>
+                <div>
+                  <span class="user__name">فرزداد صابرعلی</span>
+                  <div class="user__role">کاربر عادی</div>
+                </div>
+              </a>
+              <hr />
+              <ul class="list">
+                <li>
+                  <a href="#" class="list__item">
+                    <iconify-icon
+                      icon="hugeicons:logout-04"
+                      width="1.2em"
+                      height="1.2em"
+                    ></iconify-icon>
+                    <span>خروج</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div> -->
+          <button
+            class="t4-btn -outlined -primary -icon-only menu-btn"
+            open-mobile-nav
+          >
+            <iconify-icon
+              icon="cil:hamburger-menu"
+              width="1.2em"
+              height="1.2em"
+              class="open-icon"
+              noobserver
+            ></iconify-icon>
+            <iconify-icon
+              icon="mingcute:close-line"
+              class="close-icon"
+              width="1.2em"
+              height="1.2em"
+              noobserver
+            ></iconify-icon>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="site-main"></main>
+    <footer class="site-footer">
+      <div class="site-footer__main container footer">
+        <div class="footer__top">
+          <a href="#" class="logo">
+            <img
+              src="./assets/img/logo-dark.webp"
+              height="44"
+              alt="Farzad Fit"
+            />
+            <div>
+              <span>فرزاد فیت</span>
+              <p>شعار فرزاد فیت</p>
+            </div>
+          </a>
+          <a href="#" class="t4-btn -filled -accent">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1.2em"
+              height="1.2em"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                color="currentColor"
+              >
+                <path
+                  d="M15 2.5V4c0 1.414 0 2.121.44 2.56C15.878 7 16.585 7 18 7h1.5"
+                />
+                <path
+                  d="M4 16V8c0-2.828 0-4.243.879-5.121C5.757 2 7.172 2 10 2h4.172c.408 0 .613 0 .797.076c.183.076.328.22.617.51l3.828 3.828c.29.29.434.434.51.618c.076.183.076.388.076.796V16c0 2.828 0 4.243-.879 5.121C18.243 22 16.828 22 14 22h-4c-2.828 0-4.243 0-5.121-.879C4 20.243 4 18.828 4 16m4-5h8m-8 3h8m-8 3h4.17"
+                />
+              </g>
+            </svg>
+            <span class="text">دریافت برنامه</span>
+          </a>
+        </div>
+        <div class="footer__right">
+          <div class="wp-content -fs-p-6">
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+              نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+              کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان
+              جامعه
+            </p>
+          </div>
+        </div>
+        <div class="footer__center">
+          <h2 class="-fs-h-5 mb-4">منوی فوتر</h2>
+          <ul class="footer-menu">
+            <li>
+              <a href="#" class="footer-menu__item">منوی اول</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی دوم</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی سوم</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی چهارم</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی پنجم</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__center">
+          <h2 class="-fs-h-5 mb-4">منوی فوتر</h2>
+          <ul class="footer-menu">
+            <li>
+              <a href="#" class="footer-menu__item">منوی اول</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی دوم</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی سوم</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی چهارم</a>
+            </li>
+            <li>
+              <a href="#" class="footer-menu__item">منوی پنجم</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__left">
+          <h2 class="-fs-h-5 mb-4">تماس با ما</h2>
+          <ul class="contact-us">
+            <li>
+              <a href="#" class="contact-us__item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em"
+                  height="1.2em"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    color="currentColor"
+                  >
+                    <path
+                      d="M14.5 9a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0m3.722 8c1.395 1.988 2.062 3.047 1.665 3.9q-.06.128-.14.247c-.575.853-2.06.853-5.03.853H9.283c-2.97 0-4.454 0-5.029-.853a2 2 0 0 1-.14-.247c-.397-.852.27-1.912 1.665-3.9"
+                    />
+                    <path
+                      d="M13.257 17.494a1.813 1.813 0 0 1-2.514 0c-3.089-2.993-7.228-6.336-5.21-11.19C6.626 3.679 9.246 2 12 2s5.375 1.68 6.467 4.304c2.016 4.847-2.113 8.207-5.21 11.19"
+                    />
+                  </g>
+                </svg>
+                <span class="text">مشهد - وکیل أباد 25 - پلاک 136</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="contact-us__item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em"
+                  height="1.2em"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    color="currentColor"
+                  >
+                    <path
+                      d="m4.74 14.369l1.954-1.387a5.3 5.3 0 0 1 1.746-.823c.732-.195 1.06-.595 1.06-1.448c0-2.165 5-2.395 5 0c0 .853.328 1.253 1.06 1.447c.642.172 1.2.435 1.746.824l1.954 1.386c.883.628 1.295.931 1.524 1.414c.216.454.216.986.216 2.05c0 1.914 0 2.871-.536 3.484c-.649.743-2.336.68-3.372.68H6.908c-1.036 0-2.689.103-3.372-.68C3 20.703 3 19.746 3 17.832c0-1.064 0-1.596.216-2.05c.23-.482.64-.786 1.524-1.414"
+                    />
+                    <path
+                      d="M14 17a2 2 0 1 1-4 0a2 2 0 0 1 4 0M6.96 3.698c-1.318.376-2.266.843-3.134 1.407c-1.373.892-1.962 2.499-1.8 4.05c.068.656.595.97 1.205.8c.464-.13.928-.255 1.389-.391c1.347-.4 1.664-.886 1.851-2.265zm0 0c3.259-.93 6.821-.93 10.08 0m0 0c1.318.376 2.266.843 3.134 1.407c1.373.892 1.962 2.499 1.8 4.05c-.068.656-.595.97-1.205.8c-.463-.13-.928-.255-1.389-.391c-1.347-.4-1.664-.886-1.851-2.265z"
+                    />
+                  </g>
+                </svg>
+                <span class="text">051-12345678</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom container">
+        <div class="copyright wp-content container">
+          <small
+            >© کلیه حقوق مادی و معنوی این سایت متعلق به شرکت
+            <a href="#">تیک۴</a> می‌باشد.</small
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
