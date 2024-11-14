@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farzad Fit • Kinesiology single</title>
+
+    <!-- Start Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- End Favicon -->
+
+    <script type="module" src="/script/general.js"></script>
+    <link rel="stylesheet" href="/styles/general.scss" />
+    <link rel="stylesheet" href="/styles/pages/kinesiology-single.scss" />
+  </head>
+
+  <body>
+    <div class="site-body">
+      <header class="site-header">
+        <div class="navbar container">
+          <div class="navbar__logo">
+            <a href="#" class="logo">
+              <img src="/assets/img/logo.png" height="44" alt="Farzad Fit" />
+              <p>فرزاد <span class="-c-accent">فیت</span></p>
+            </a>
+          </div>
+          <div class="navbar__menu">
+            <ul class="main-menu">
+              <li class="-current">
+                <a href="#">صفحه اصلی</a>
+              </li>
+              <li>
+                <a href="#">درباره فرزاد فیت</a>
+              </li>
+              <li class="-has-child">
+                <a href="#">خدمات</a>
+                <ul>
+                  <li>
+                    <a href="#">خدمات اول</a>
+                  </li>
+                  <li>
+                    <a href="#">خدمات دوم</a>
+                  </li>
+                  <li>
+                    <a href="#">خدمات سوم</a>
+                  </li>
+                  <li>
+                    <a href="#">خدمات چهارم</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">تعرفه‌ها</a>
+              </li>
+              <li>
+                <a href="#">وبلاگ</a>
+              </li>
+              <li>
+                <a href="#">تماس با ما</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar__actions">
+            <button class="t4-btn faq-btn">
+              <iconify-icon
+                icon="hugeicons:message-question"
+                width="1.2em"
+                height="1.2em"
+              ></iconify-icon>
+              <span class="t4-btn__text">سوالات متداول</span>
+            </button>
+            <button class="t4-btn -filled -accent">
+              <span class="t4-btn__text">‌ورود / ثبت‌نام</span>
+            </button>
+            <!-- <div
+              x-data="{ open: false }"
+              @click.away="if (open) open = false"
+              class="user-menu"
+            >
+              <button
+                @click="open = !open"
+                class="t4-btn -filled -accent user-menu__btn"
+              >
+                <iconify-icon
+                  icon="hugeicons:user-circle-02"
+                  width="1.2em"
+                  height="1.2em"
+                ></iconify-icon>
+                <span class="t4-btn__text">حساب کاربری</span>
+              </button>
+              <div x-show="open" x-transition class="user-menu__content">
+                <a href="#" class="user">
+                  <div class="user__img">
+                    <img src="/assets/img/user-img.jpg" alt="" />
+                  </div>
+                  <div>
+                    <span class="user__name">فرزداد صابرعلی</span>
+                    <div class="user__role">کاربر عادی</div>
+                  </div>
+                </a>
+                <hr />
+                <ul class="list">
+                  <li>
+                    <a href="#" class="list__item">
+                      <iconify-icon
+                        icon="hugeicons:logout-04"
+                        width="1.2em"
+                        height="1.2em"
+                      ></iconify-icon>
+                      <span>خروج</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+            <button
+              class="t4-btn -outlined -primary -icon-only menu-btn"
+              open-mobile-nav
+            >
+              <iconify-icon
+                icon="cil:hamburger-menu"
+                width="1.2em"
+                height="1.2em"
+                class="open-icon"
+                noobserver
+              ></iconify-icon>
+              <iconify-icon
+                icon="mingcute:close-line"
+                class="close-icon"
+                width="1.2em"
+                height="1.2em"
+                noobserver
+              ></iconify-icon>
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="site-main">
+        <div class="kinesiology-single container mt-12">
+          <div class="kinesiology-single__side">
+            <div class="box -categories">
+              <div class="box__header">
+                <h2 class="title">دسته بندی عضلات</h2>
+              </div>
+              <div class="box__content"></div>
+            </div>
+            <div class="box -toc">
+              <div class="box__header">
+                <h2 class="title">آنچه در این مقاله می خوانید:</h2>
+              </div>
+              <div class="box__content">
+                <ul>
+                  <li>
+                    <a href="#"></a>
+                  </li>
+                </ul>
+              </div>
+              <script>
+                const toc = document.getElementById("toc");
+                const content = document.getElementById("content");
+                const headers = content.querySelectorAll("h2, h3");
+                headers.forEach((header, index) => {
+                  const li = document.createElement("li");
+                  const a = document.createElement("a");
+                  a.href = `#section${index}`;
+                  a.textContent = header.textContent;
+                  header.id = `section${index}`;
+
+                  li.appendChild(a);
+                  toc.appendChild(li);
+                });
+                const links = document.querySelectorAll("#toc a");
+                
+                function activateLink() {
+                  let index = headers.length;
+
+                  while (
+                    --index &&
+                    window.scrollY + 50 < headers[index].offsetTop
+                  ) {}
+
+                  // حذف کلاس فعال از تمامی لینک‌ها
+                  links.forEach((link) => link.classList.remove("active"));
+
+                  // افزودن کلاس فعال به لینک مرتبط
+                  if (links[index]) links[index].classList.add("active");
+                }
+
+                // افزودن listener برای اسکرول
+                window.addEventListener("scroll", activateLink);
+              </script>
+            </div>
+          </div>
+          <div class="kinesiology-single__main">
+            <h1>زیربغل دمبل جفت خم مچ برعکس + ویدیو و نکات آموزشی</h1>
+            <div class="post-img">
+              <img
+                src="/assets/img/pexels-runffwpu-2526878.webp"
+                alt=""
+              />
+            </div>
+            <div class="wp-content">
+              <h2>
+                آموزش حرکت زیربغل دمبل جفت خم مچ برعکس (Reverse Grip Bent Over
+                Dumbbell Row)
+              </h2>
+              <ul>
+                <li><strong>عضله اصلی حرکت:</strong> پشتی بزرگ (زیربغل)</li>
+                <li><strong>عضلات کمکی:</strong> سرشانه (دلتوئید) – ذوزنقه</li>
+                <li><strong>مکانیک:</strong> چند مفصلی</li>
+                <li><strong>کد تمرین:</strong> حرکت ۱۸</li>
+                <li><strong>نام دیگر حرکت:</strong> پشت دمبل خم جفت دست</li>
+              </ul>
+              <h2>نکات و خطا های حرکت زیربغل دمبل جفت خم مچ برعکس</h2>
+              <ol>
+                <li>گردن و ستون فقرات در راستای هم باشند.</li>
+                <li>حرکت را کنترل شده و آهسته اجرا کنید.</li>
+              </ol>
+              <h2>حالت شروع و نحوه اجرا</h2>
+              <ul>
+                <li>
+                  برای شروع حرکت زیربغل دمبل جفت خم مچ برعکس, یک دمبل در هر دو
+                  دست خود بگیرید.
+                </li>
+                <li>
+                  زانوها را اندکی خم کرده و بالا تنه را به سمت جلو متمایل کنید.
+                </li>
+                <li>
+                  در حالی که بالا تنه را صاف نگه داشته اید ، از ناحیه کمر خم شده
+                  به گونه ای که بالا تنه تقریبا با زمین موازی شود.
+                </li>
+                <li>
+                  دمبل ها باید در کنار بدن شما آویزان و دست ها باید نسبت به بالا
+                  تنه و زمین عمود و کف دست ها به سمت بالا(سقف) باشند.
+                </li>
+                <li>این نقطه شروع حرکت زیر بغل دمبل خم خواهد بود.</li>
+                <li>
+                  در حالی که بالا تنه را ثابت نگه داشته اید ، دمبل ها را تا کنار
+                  سینه های خود بالا بیاورید.
+                </li>
+                <li>
+                  آرنج ها را در کنار بدن نگه داشته و تنها از ساعد برای نگه داشتن
+                  دمبل ها استفاده کنید.
+                </li>
+                <li>
+                  در بالاترین نقطه ماهیچه های پشت را منقبض و لحظه ای مکث کنید.
+                  سپس دمبل ها را به آرامی به نقطه شروع بازگردانید.
+                </li>
+              </ul>
+              <h3>نحوه صحیح تنفس در حرکت زیربغل دمبل جفت خم مچ برعکس</h3>
+              <p>
+                با بالا آوردن دمبل ها عمل <strong>بازدم</strong> و با پایین
+                آوردن آن ها عمل <strong>دم</strong> را انجام دهید.
+              </p>
+              <h2>
+                دامنه منفی (انقباض اکسنتریک) حرکت زیربغل دمبل جفت خم مچ برعکس
+              </h2>
+              <p>
+                در حرکت زیربغل دمبل جفت خم مچ برعکس وقتی دست‌ها را به سمت پایین
+                حرکت می‌دهید و آرنج‌ها صاف می‌شوند، دامنه منفی حرکت یا انقباض
+                برون گرا را اجرا می‌کنید.
+              </p>
+              <h2>
+                دامنه مثبت (انقباض کانسنتریک) حرکت زیربغل دمبل جفت خم مچ برعکس
+              </h2>
+              <p>
+                در حرکت زیربغل دمبل جفت خم مچ برعکس وقتی دست‌ها را به سمت بالا
+                حرکت می‌دهید و آرنج‌ها خم می‌شوند، دامنه مثبت یا انقباض درون گرا
+                را اجرا می‌کنید.
+              </p>
+              <div>
+                <h2>زیر بغل دمبل جفت خم مچ برعکس چه حرکتی است؟</h2>
+                <div>
+                  زیر بغل دمبل جفت خم مچ برعکس ، حرکتی بسیار موثر و پر اهمیت در
+                  بدنسازی است. با انجام دادن این حرکت کمک زیادی به سلامت بدن خود
+                  کرده و همچنین عضلات پشت بسیار قوی خواهید داشت.
+                </div>
+                <h3>
+                  در حرکت زیر بغل دمبل جفت خم مچ برعکس به چه نکاتی باید دقت کرد؟
+                </h3>
+                <ul>
+                  <li>دمبل ها در دستان باید حالت ثابت داشته باشند</li>
+                  <li>در حین حرکت نباید قوز کنید</li>
+                  <li>سر نباید خم شود</li>
+                </ul>
+                <h2>زیر بغل دمبل جفت خم مچ برعکس چه مزیت هایی دارد؟</h2>
+                <ul>
+                  <li>بهبود عملکرد ساعد</li>
+                  <li>کمک به دردهای کمر</li>
+                  <li>تقویت ماهیچه های بالای کمر</li>
+                  <li>قدرتمندی دست ها</li>
+                  <li>کمک به زیبایی بالا تنه</li>
+                  <li>قابل انجام در هرجا</li>
+                  <li>مناسب همه افراد</li>
+                </ul>
+                <h2>
+                  کدام عضلات در حرکت زیر بغل دمبل جفت خم مچ برعکس درگیر هستند؟
+                </h2>
+                <ol>
+                  <li>زیر بغل</li>
+                  <li>سر شانه</li>
+                  <li>ذوزنقه ای</li>
+                  <li>ساعد</li>
+                  <li>پشت بازو</li>
+                  <li>جلو بازو</li>
+                  <li>شکم</li>
+                  <li>کمر</li>
+                  <li>سینه</li>
+                </ol>
+                <h2>
+                  <b>توضیحات تکمیلی عضله زیربغل</b>
+                </h2>
+                <p>
+                  عضله
+                  <a
+                    href="https://badankhooba.com/blog/exercise-guides-category/lats/"
+                    >زیربغل</a
+                  >
+                  (لاتیسیموس خلفی) ، عضله‌ای صاف و پهن می‌باشد. این عضله قسمت
+                  بزرگی از قفسه سینه تحتانی را پوشش می‌دهد. زیربغل یک عضله جانبی
+                  تنفسی می‌باشد و عملکرد آن در اندام فوقانی هست و از این لحاظ
+                  جزو عضلات کتف محسوب می‌شود.
+                </p>
+                <p>
+                  این عضله از زیر بغل تا وسط کمر امتداد دارد. عضله‌ای بزرگ و به
+                  شکل مثلث می‌باشد که به شما برای انجام حرکاتی مانند حرکات کششی،
+                  شنا و نفس کشیدن را کمک می‌کند.این عضله شانه های شما را باز
+                  می‌کند در حالی که کمرتان را بدون حرکت می‌تواند نگه دارد. عصب
+                  دهی این عضله بر عهده عصب بلند کتف (عصب سینه‌ای) می‌باشد.
+                </p>
+                <p>
+                  <img
+                    decoding="async"
+                    class="aligncenter size-vp_sm wp-image-16044 entered exited"
+                    alt="توضیحات تکمیلی عضله زیربغل"
+                    width="500"
+                    height="500"
+                    data-lazy-srcset="https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-500x500.webp 500w, https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-300x300.webp 300w, https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-150x150.webp 150w, https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-768x768.webp 768w, https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-800x800.webp 800w, https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-400x400.webp 400w, https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-100x100.webp 100w, https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968.webp 1000w"
+                    data-lazy-sizes="(max-width: 500px) 100vw, 500px"
+                    data-lazy-src="https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-500x500.webp"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20500'%3E%3C/svg%3E"
+                  /><noscript
+                    ><img
+                      decoding="async"
+                      class="aligncenter size-vp_sm wp-image-16044"
+                      src="https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-500x500.webp"
+                      alt="توضیحات تکمیلی عضله زیربغل"
+                      width="500"
+                      height="500"
+                      srcset="
+                        https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-500x500.webp  500w,
+                        https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-300x300.webp  300w,
+                        https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-150x150.webp  150w,
+                        https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-768x768.webp  768w,
+                        https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-800x800.webp  800w,
+                        https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-400x400.webp  400w,
+                        https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968-100x100.webp  100w,
+                        https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-13T102015.968.webp         1000w
+                      "
+                      sizes="(max-width: 500px) 100vw, 500px"
+                  /></noscript>
+                </p>
+                <p>
+                  عضلات کوچکتر دیگری هم مثل ترس ماژر (teres major) و رامبوید
+                  (rhomboid) وجود دارند که حرکت پشت را تسهیل می کنند. ترس ماژر،
+                  لبه خارجی استخوان کتف را به استخوان بازو متصل می کند. وظیفه
+                  اصلی این عضله، کشیدن بازو به سمت پشت است.
+                </p>
+                <p>
+                  عضلات رامبوید هم از یک سو به دو طرف ستون مهره ها و از سوی
+                  دیگر، به میانه استخوان های کتف اتصال دارند. این عضلات، استخوان
+                  های کتف را به یکدیگر نزدیک می کنند.<br />
+                  بسیاری عضلات کوچک دیگر هم در ناحیه پشت وجود دارند که در طول
+                  ستون مهره ها کشیده شده اند. مجموعه این عضلات را “راست کننده
+                  مهره ای” (spinal erector) می نامند که شامل لانگیسیمس
+                  (longissimus)، اسپاینالیس (spinalis) و ایلیوکستالیس
+                  (iliocostalis) است.
+                </p>
+                <h3>
+                  <b>ضعف عضلات زیربغل و عوارض آن</b>
+                </h3>
+                <p>
+                  ضعف عضلات زیر بغل و پشت باعث می‌شود که بدن شما برای ثبات و
+                  حمایت به رباط های متصل کننده‌ی استخوان ها تکیه کند. همین موضوع
+                  باعث بوجود آمدن درد و اختلال در عملکرد بدن شما می‌شود. داشتن
+                  عضلات پشتی قوی‌تر، کیفیت عملکرد شما را در انجام کارهای روزانه،
+                  ورزش (زیربغل دمبل جفت خم مچ برعکس) و … را افزایش می‌دهد.
+                  بنابراین حتما در تمرینات خود، تمرینات عضلات پشتی (زیربغل دمبل
+                  جفت خم مچ برعکس) را قرار دهید و هفته‌ای یکبار حداقل این
+                  تمرینات را انجام دهید.
+                </p>
+                <h3><b>مزایای تمرینات زیر بغل</b></h3>
+                <p>
+                  عضله زیربغل (لاتیسیموس خلفی) در تمامی فعالیت های روزانه شما
+                  نقش دارد و برای راحتی، باید به اندازه کافی این عضله را تقویت
+                  کرد. تمرینات زیر بغل باعث رشد و افزایش حجم عضلانی قسمت بالا
+                  تنه شما می‌شود که در زیبایی بدنتان هم تاثیر دارد.این عضلات
+                  مانند عضلات سینه عضلات بزرگی هستند که قسمت زیادی از بالا تنه
+                  شما را تشکیل می‌دهند.
+                </p>
+                <p>
+                  <img
+                    decoding="async"
+                    class="aligncenter size-full wp-image-16127 entered exited"
+                    alt="مزایای تمرینات زیر بغل"
+                    width="800"
+                    height="500"
+                    data-lazy-srcset="https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-14T124612.598.webp 800w, https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-14T124612.598-300x188.webp 300w, https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-14T124612.598-768x480.webp 768w, https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-14T124612.598-500x313.webp 500w"
+                    data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+                    data-lazy-src="https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-14T124612.598.webp"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20500'%3E%3C/svg%3E"
+                  /><noscript
+                    ><img
+                      decoding="async"
+                      class="aligncenter size-full wp-image-16127"
+                      src="https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-14T124612.598.webp"
+                      alt="مزایای تمرینات زیر بغل"
+                      width="800"
+                      height="500"
+                      srcset="
+                        https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-14T124612.598.webp         800w,
+                        https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-14T124612.598-300x188.webp 300w,
+                        https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-14T124612.598-768x480.webp 768w,
+                        https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-14T124612.598-500x313.webp 500w
+                      "
+                      sizes="(max-width: 800px) 100vw, 800px"
+                  /></noscript>
+                </p>
+                <p>
+                  برای کاهش درد و آسیب رساندن به کمر باید عضلات پشتی و زیر بغل
+                  شما تقویت (زیربغل دمبل جفت خم مچ برعکس) شود. خستگی عضلات پشتی
+                  و کمر باعث بوجود آمدن وضعیت نامناسب و فرم بدن نامناسب می‌شود و
+                  برای جلوگیری از آن باید اسقامت و قدرت عضلات پشت بخصوص زیر بغل
+                  با تمرینات مناسب (زیربغل دمبل جفت خم مچ برعکس) افزایش یابد.
+                </p>
+                <p>
+                  برای بهره مند شدن از مزایای تمرینات زیربغل (زیربغل دمبل جفت خم
+                  مچ برعکس) باید یک برنامه تمرینی مناسب و درست داشته باشید که
+                  تیم ما می‌تواند در این مورد به شما کمک کند.
+                </p>
+                <h2><b>معرفی تمرینات زیربغل</b></h2>
+                <p>
+                  حرکات زیربغل به دو دسته حرکات ترکیبی و حرکات ایزوله تقسیم بندی
+                  می‌شود. تمرینات ترکیبی چندین عضله را درگیر کرده و تمرینات
+                  ایزوله فقط عضله زیربغل شما را درگیر می‌کند. ست ها و دامنه‌های
+                  تکرار را باید بر اساس اهداف خود و با مشورت مربی مشخص کنید.
+                </p>
+                <h3>
+                  <b>چند مثال از بهترین حرکات زیر بغل </b>
+                </h3>
+                <p>
+                  حرکات زیربغل خم، حرکات زیربغل دستگاه اچ، حرکات زیربغل سیمکش،
+                  حرکات زیربغل قایقی و حرکات زیربغل با کش.
+                </p>
+                <p>
+                  <img
+                    decoding="async"
+                    class="aligncenter size-full wp-image-15898 entered exited"
+                    alt="چند مثال از بهترین حرکات زیر بغل&nbsp;"
+                    width="800"
+                    height="500"
+                    data-lazy-srcset="https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-10T184219.971.webp 800w, https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-10T184219.971-300x188.webp 300w, https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-10T184219.971-768x480.webp 768w, https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-10T184219.971-500x313.webp 500w"
+                    data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+                    data-lazy-src="https://badankhooba.com/wp-content/uploads/2023/01/New-Project-2023-08-10T184219.971.webp"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20500'%3E%3C/svg%3E"
+                  />
+                </p>
+                <h3>
+                  <b>نکات مهم تمرینی عضلات زیربغل</b>
+                </h3>
+                <p>
+                  در ادامه مطلب به چند نکته درباره تقویت عضلات زیربغل
+                  می‌پردازیم.
+                </p>
+                <h4><b>در صورت داشتن کمر درد…</b></h4>
+                <p>
+                  اگر درد کمر شما مداوم است ، حتما قبل از انجام تمرینات با پزشک
+                  مشاوره کنید و از انجام تمریناتی که درد و فشار در ناحیه کمرتان
+                  ایجاد می‌کنند را خودداری کنید. درباره کمر درد بعد از مشاوره با
+                  پزشک با دو حالت روبرو می‌شوید:
+                </p>
+                <ol>
+                  <li>استفاده از حرکات اصلاحی</li>
+                  <li>فیزیوتراپی</li>
+                </ol>
+                <h4>
+                  <b>عضلات کمکی در تمرینات زیربغل</b>
+                </h4>
+                <p>
+                  دو عضله کمکی در حرکات زیربغل، عضله ساعد و عضله دوسر بازویی شما
+                  می‌باشد. این عضلات به نسبت عضله زیربغل ضعیف تر بوده و باید
+                  بیشتر تمرین داده شوند تا در تمرینات حرکات زیربغل به شما کمک
+                  کنند.
+                </p>
+                <h4><b>افراد مبتدی</b></h4>
+                <p>
+                  ورزشکاران مبتدی باید از وزنه‌های مناسب برای شروع حرکات زیربغل
+                  (زیربغل دمبل جفت خم مچ برعکس) استفاده کنند. استفاده از
+                  وزنه‌های سنگین برای افراد مبتدی به شدت منع شده و باعث بروز
+                  آسیب دیدگی در ورزشکاران مبتدی می‌شود.
+                </p>
+                <p>
+                  نکته مهم تر، فرم انجام حرکت و تمپو (سرعت) انجام حرکت می‌باشد.
+                  اشتباه زدن حرکات اکثرا بدلیل انتخاب وزنه های سنگین می‌باشد که
+                  باید سریعا از وزنه‌های سبک تر استفاده شود.
+                </p>
+                <h2><b>جمع‌بندی</b></h2>
+                <p>
+                  تقویت عضلات زیربغل نقش مهمی در بهبود عملکرد ما حتی در انجام
+                  امور روزمره ما دارند. به همین دلیل در این مطلب نکات مهم عضله
+                  زیربغل را توضیح دادیم. اگر می‌خواهید بدنی خوش فرم تر و قوی تر
+                  داشته باشید، حتما از تمرین دادن عضلات زیربغل غافل نشوید.
+                </p>
+                <p>
+                  <b>همراهان</b><b> </b><b>عزیز،</b><b> </b><b>لطفا</b><b> </b
+                  ><b>سوالات</b><b> </b><b>و</b><b> </b><b>نظرات</b><b> </b
+                  ><b>خود</b><b> </b><b>را</b><b> </b><b>در</b><b> </b
+                  ><b>مورد</b><b> زیربغل دمبل جفت خم مچ برعکس</b><b>&nbsp;</b
+                  ><b>برای</b><b> </b><b>ما</b><b> </b><b>در</b><b> </b
+                  ><b>قسمت</b><b> </b><b>کامنت</b><b> </b><b>بنویسید</b
+                  ><span><b>.</b></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="site-footer">
+        <div class="site-footer__main container footer">
+          <div class="footer__top">
+            <a href="#" class="logo">
+              <img
+                src="/assets/img/logo-dark.webp"
+                height="44"
+                alt="Farzad Fit"
+              />
+              <div>
+                <span>فرزاد فیت</span>
+                <p>شعار فرزاد فیت</p>
+              </div>
+            </a>
+            <a href="#" class="t4-btn -filled -accent">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.2em"
+                height="1.2em"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  color="currentColor"
+                >
+                  <path
+                    d="M15 2.5V4c0 1.414 0 2.121.44 2.56C15.878 7 16.585 7 18 7h1.5"
+                  />
+                  <path
+                    d="M4 16V8c0-2.828 0-4.243.879-5.121C5.757 2 7.172 2 10 2h4.172c.408 0 .613 0 .797.076c.183.076.328.22.617.51l3.828 3.828c.29.29.434.434.51.618c.076.183.076.388.076.796V16c0 2.828 0 4.243-.879 5.121C18.243 22 16.828 22 14 22h-4c-2.828 0-4.243 0-5.121-.879C4 20.243 4 18.828 4 16m4-5h8m-8 3h8m-8 3h4.17"
+                  />
+                </g>
+              </svg>
+              <span class="text">دریافت برنامه</span>
+            </a>
+          </div>
+          <div class="footer__right">
+            <div class="wp-content -fs-p-6">
+              <p>
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+                در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+                نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+                کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان
+                جامعه
+              </p>
+            </div>
+          </div>
+          <div class="footer__center">
+            <h2 class="-fs-h-5 mb-4">منوی فوتر</h2>
+            <ul class="footer-menu">
+              <li>
+                <a href="#" class="footer-menu__item">منوی اول</a>
+              </li>
+              <li>
+                <a href="#" class="footer-menu__item">منوی دوم</a>
+              </li>
+              <li>
+                <a href="#" class="footer-menu__item">منوی سوم</a>
+              </li>
+              <li>
+                <a href="#" class="footer-menu__item">منوی چهارم</a>
+              </li>
+              <li>
+                <a href="#" class="footer-menu__item">منوی پنجم</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__center">
+            <h2 class="-fs-h-5 mb-4">منوی فوتر</h2>
+            <ul class="footer-menu">
+              <li>
+                <a href="#" class="footer-menu__item">منوی اول</a>
+              </li>
+              <li>
+                <a href="#" class="footer-menu__item">منوی دوم</a>
+              </li>
+              <li>
+                <a href="#" class="footer-menu__item">منوی سوم</a>
+              </li>
+              <li>
+                <a href="#" class="footer-menu__item">منوی چهارم</a>
+              </li>
+              <li>
+                <a href="#" class="footer-menu__item">منوی پنجم</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__left">
+            <h2 class="-fs-h-5 mb-4">تماس با ما</h2>
+            <ul class="contact-us">
+              <li>
+                <a href="#" class="contact-us__item">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.2em"
+                    height="1.2em"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      color="currentColor"
+                    >
+                      <path
+                        d="M14.5 9a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0m3.722 8c1.395 1.988 2.062 3.047 1.665 3.9q-.06.128-.14.247c-.575.853-2.06.853-5.03.853H9.283c-2.97 0-4.454 0-5.029-.853a2 2 0 0 1-.14-.247c-.397-.852.27-1.912 1.665-3.9"
+                      />
+                      <path
+                        d="M13.257 17.494a1.813 1.813 0 0 1-2.514 0c-3.089-2.993-7.228-6.336-5.21-11.19C6.626 3.679 9.246 2 12 2s5.375 1.68 6.467 4.304c2.016 4.847-2.113 8.207-5.21 11.19"
+                      />
+                    </g>
+                  </svg>
+                  <span class="text">مشهد - وکیل أباد 25 - پلاک 136</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="contact-us__item">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.2em"
+                    height="1.2em"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      color="currentColor"
+                    >
+                      <path
+                        d="m4.74 14.369l1.954-1.387a5.3 5.3 0 0 1 1.746-.823c.732-.195 1.06-.595 1.06-1.448c0-2.165 5-2.395 5 0c0 .853.328 1.253 1.06 1.447c.642.172 1.2.435 1.746.824l1.954 1.386c.883.628 1.295.931 1.524 1.414c.216.454.216.986.216 2.05c0 1.914 0 2.871-.536 3.484c-.649.743-2.336.68-3.372.68H6.908c-1.036 0-2.689.103-3.372-.68C3 20.703 3 19.746 3 17.832c0-1.064 0-1.596.216-2.05c.23-.482.64-.786 1.524-1.414"
+                      />
+                      <path
+                        d="M14 17a2 2 0 1 1-4 0a2 2 0 0 1 4 0M6.96 3.698c-1.318.376-2.266.843-3.134 1.407c-1.373.892-1.962 2.499-1.8 4.05c.068.656.595.97 1.205.8c.464-.13.928-.255 1.389-.391c1.347-.4 1.664-.886 1.851-2.265zm0 0c3.259-.93 6.821-.93 10.08 0m0 0c1.318.376 2.266.843 3.134 1.407c1.373.892 1.962 2.499 1.8 4.05c-.068.656-.595.97-1.205.8c-.463-.13-.928-.255-1.389-.391c-1.347-.4-1.664-.886-1.851-2.265z"
+                      />
+                    </g>
+                  </svg>
+                  <span class="text">051-12345678</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom container">
+          <div class="copyright wp-content container">
+            <small
+              >© کلیه حقوق مادی و معنوی این سایت متعلق به شرکت
+              <a href="#">تیک۴</a> می‌باشد.</small
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

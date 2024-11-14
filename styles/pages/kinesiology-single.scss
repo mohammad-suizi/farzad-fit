@@ -1,0 +1,42 @@
+@use "../style-core/core/mixins" as *;
+@use "../style-core/core/functions" as *;
+
+.kinesiology-single {
+  @include max(lg) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  @include min(lg) {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 2rem;
+  }
+  &__side {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    .box {
+      border: 1px solid var(--t4-outline);
+      border-radius: 1rem;
+      padding: 1rem;
+      &__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        .title {
+          font-size: 1.125rem;
+        }
+      }
+      &.-categories{
+        
+      }
+    }
+  }
+  &__main {
+    .post-img{
+      overflow: hidden;
+      border-radius: 1rem;
+      margin-block: 1rem 2.5rem;
+    }
+  }
+}

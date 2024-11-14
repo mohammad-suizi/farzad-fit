@@ -10,6 +10,7 @@
     overflow-x: auto;
     margin-inline: -1rem;
     padding-inline: 1rem;
+    @include hide-scrollbars;
     .divider {
       height: 2px;
       background-color: var(--t4-surface);

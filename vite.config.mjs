@@ -22,6 +22,9 @@ if (isProduction) {
         "./page.html",
         "./product-archive.html",
         "./product-single.html",
+        "./kinesiology.html",
+        "./kinesiology-archive.html",
+        "./kinesiology-single.html",
       ],
       css: [
         "./styles/general.scss",
@@ -35,6 +38,8 @@ if (isProduction) {
         "./styles/pages/page.scss",
         "./styles/pages/product-archive.scss",
         "./styles/pages/product-single.scss",
+        "./styles/pages/kinesiology-archive.scss",
+        "./styles/pages/kinesiology-single.scss",
       ],
       defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
     })
@@ -61,6 +66,9 @@ export default defineConfig({
         "page-html": resolve(__dirname, "./page.html"),
         "product-archive-html": resolve(__dirname, "./product-archive.html"),
         "product-single-html": resolve(__dirname, "./product-single.html"),
+        "kinesiology-html": resolve(__dirname, "./kinesiology.html"),
+        "kinesiology-archive-html": resolve(__dirname, "./kinesiology-archive.html"),
+        "kinesiology-single-html": resolve(__dirname, "./kinesiology-single.html"),
       },
       output: {
         entryFileNames: "assets/js/[name].js",
